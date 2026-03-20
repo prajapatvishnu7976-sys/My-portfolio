@@ -117,9 +117,9 @@ I'm a passionate **Full Stack Developer** currently pursuing **B.Tech in Compute
 ## 📸 Screenshots
 
 <div align="center">
-  <img src="screen21" alt="Hero Section" width="400" />
-  <img src="screen22" alt="Projects Section" width="400" />
-  <img src="screen23" alt="Contact Section" width="400" />
+  <img src="screen21.png" alt="Hero Section" width="400" />
+  <img src="screen22.png" alt="Projects Section" width="400" />
+  <img src="screen23.png" alt="Contact Section" width="400" />
 </div>
 
 > 📝 **Note:** Add your screenshots in a `screenshots` folder and update the paths above.
