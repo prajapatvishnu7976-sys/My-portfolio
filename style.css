@@ -1,7 +1,7 @@
 /* ============================================
    🔥 VISHNU KUMAR - PROFESSIONAL PORTFOLIO CSS
    Full Stack Developer (Web + App)
-   Version: 3.0 - Mobile Perfect Edition
+   Version: 3.1 - Footer Mobile Fixed Edition
    ============================================ */
 
 /* ============================================
@@ -2221,50 +2221,59 @@ section {
 }
 
 /* ============================================
-   FOOTER
+   FOOTER - MOBILE RESPONSIVE FIXED
    ============================================ */
 .footer {
-    background: var(--bg-tertiary);
-    padding: 50px 0 20px;
+    background: linear-gradient(180deg, var(--bg-tertiary) 0%, var(--bg-primary) 100%);
+    padding: 60px 0 30px;
     border-top: 1px solid var(--border-color);
 }
 
 .footer-container {
     max-width: var(--container-width);
     margin: 0 auto;
-    padding: 0 5%;
+    padding: 0 20px;
 }
 
 .footer-content {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    margin-bottom: 30px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+    text-align: center;
 }
 
 .footer-brand {
-    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .footer-logo {
     display: inline-flex;
     align-items: center;
     gap: 12px;
-    margin-bottom: 12px;
+    text-decoration: none;
+    margin-bottom: 15px;
 }
 
 .footer-logo .logo-icon {
-    width: 40px;
-    height: 40px;
-}
-
-.footer-logo .logo-icon span {
-    font-size: 1.3rem;
+    width: 45px;
+    height: 45px;
+    background: var(--gradient-primary);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: white;
 }
 
 .footer-name {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     font-weight: 700;
+    color: var(--text-primary);
     background: var(--gradient-primary);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -2273,88 +2282,177 @@ section {
 .footer-tagline {
     font-size: 0.95rem;
     color: var(--accent-primary);
+    margin-bottom: 15px;
     font-weight: 500;
-    margin-bottom: 10px;
 }
 
 .footer-description {
     font-size: 0.9rem;
-    color: var(--text-muted);
-    line-height: 1.6;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    max-width: 300px;
 }
 
 .footer-links {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.footer-column {
+    text-align: center;
 }
 
 .footer-column h4 {
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-weight: 600;
-    margin-bottom: 15px;
+    color: var(--text-primary);
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+}
+
+.footer-column h4::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 3px;
+    background: var(--gradient-primary);
+    border-radius: 2px;
 }
 
 .footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
 }
 
-.footer-column a {
+.footer-column ul li a {
+    color: var(--text-secondary);
+    text-decoration: none;
     font-size: 0.9rem;
-    color: var(--text-muted);
     transition: all var(--transition-normal);
+    display: inline-block;
 }
 
-.footer-column a:hover {
+.footer-column ul li a:hover {
     color: var(--accent-primary);
-    padding-left: 5px;
+    transform: translateY(-2px);
 }
 
 .footer-bottom {
+    padding-top: 30px;
+    border-top: 1px solid var(--border-color);
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
-    padding-top: 20px;
-    border-top: 1px solid var(--border-color);
+    gap: 12px;
     text-align: center;
 }
 
 .footer-bottom p {
     font-size: 0.85rem;
-    color: var(--text-muted);
+    color: var(--text-secondary);
+    margin: 0;
 }
 
 .footer-made {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 5px;
 }
 
 .footer-made i {
-    color: var(--accent-danger);
+    margin: 0 3px;
 }
 
+.footer-made i.fa-heart {
+    color: #ef4444;
+    animation: heartbeat 1.5s infinite;
+}
+
+.footer-made i.fa-mug-hot {
+    color: #f59e0b;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+/* Footer - Tablet (640px+) */
 @media (min-width: 640px) {
     .footer-content {
-        flex-direction: row;
-        justify-content: space-between;
+        grid-template-columns: 1.5fr 1fr;
+        text-align: left;
+        gap: 50px;
     }
     
     .footer-brand {
-        max-width: 300px;
+        align-items: flex-start;
+    }
+    
+    .footer-description {
+        max-width: 100%;
     }
     
     .footer-links {
-        flex-direction: row;
-        gap: 60px;
+        gap: 40px;
+    }
+    
+    .footer-column {
+        text-align: left;
+    }
+    
+    .footer-column h4::after {
+        left: 0;
+        transform: none;
+    }
+    
+    .footer-column ul {
+        align-items: flex-start;
     }
     
     .footer-bottom {
         flex-direction: row;
         justify-content: space-between;
+    }
+}
+
+/* Footer - Desktop (768px+) */
+@media (min-width: 768px) {
+    .footer {
+        padding: 70px 0 35px;
+    }
+    
+    .footer-container {
+        padding: 0 5%;
+    }
+    
+    .footer-content {
+        gap: 60px;
+    }
+    
+    .footer-links {
+        gap: 60px;
+    }
+}
+
+/* Footer - Large Desktop (1024px+) */
+@media (min-width: 1024px) {
+    .footer {
+        padding: 80px 0 40px;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1.5fr 1fr;
     }
 }
 
@@ -2419,12 +2517,11 @@ section {
 
 .hidden {
     display: none !important;
-} 
+}
+
 /* ============================================
    MOBILE HERO FIXES - Vishnu Special
    ============================================ */
-
-/* Mobile pe hero section ki height auto kar di hai taaki content fit ho jaye */
 @media (max-width: 767px) {
     .hero {
         min-height: auto;
@@ -2437,7 +2534,6 @@ section {
         padding: 0 4%;
     }
     
-    /* Agar chahe toh photo upar la sakta hai, warna neeche hi achhi hai */
     .hero-visual {
         width: 100%;
         display: flex;
@@ -2445,14 +2541,12 @@ section {
         margin-top: 10px;
     }
     
-    /* Image wrapper ka size chhota kiya mobile ke liye */
     .hero-image-wrapper {
         width: 260px;
         height: 260px;
-        max-width: 90vw; /* Viewport se bahar na jaye */
+        max-width: 90vw;
     }
     
-    /* Photo ka size adjust kiya */
     .profile-photo {
         width: 200px;
         height: 200px;
@@ -2460,20 +2554,17 @@ section {
         max-height: 80vw;
     }
     
-    /* Text alignment center rakha */
     .hero-content {
         text-align: center;
         width: 100%;
     }
     
-    /* Name cut na ho iske liye */
     .title-name {
         font-size: clamp(1.8rem, 7vw, 2.5rem);
         line-height: 1.2;
         word-wrap: break-word;
     }
     
-    /* Stats ko bhi adjust kiya */
     .hero-stats {
         justify-content: center;
         gap: 10px;
@@ -2484,7 +2575,6 @@ section {
         padding: 10px;
     }
     
-    /* CTA buttons ko bhi theek kiya */
     .hero-cta {
         align-items: center;
     }
@@ -2494,13 +2584,12 @@ section {
         padding: 12px 24px;
     }
     
-    /* Social icons ko center kiya */
     .hero-social {
         justify-content: center;
     }
 }
 
-/* Very small phones (iPhone SE, etc) ke liye */
+/* Very small phones (iPhone SE, etc) */
 @media (max-width: 480px) {
     .hero {
         padding-top: 90px;
@@ -2531,7 +2620,7 @@ section {
     }
 }
 
-/* Galaxy Fold jaise bahut chhote screens ke liye */
+/* Galaxy Fold jaise bahut chhote screens */
 @media (max-width: 320px) {
     .hero-image-wrapper {
         width: 180px;
@@ -2602,7 +2691,6 @@ section {
     display: block;
 }
 
-/* Agar image load nahi hoti toh placeholder dikhna chahiye */
 .photo-placeholder {
     width: 100%;
     height: 100%;
