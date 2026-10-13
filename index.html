@@ -1,1110 +1,1401 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Vishnu Kumar - Full Stack Developer (Web + App) specializing in React, Node.js, Flutter, Firebase. B.Tech CSE Student at GEC Ajmer with expertise in building production-ready applications.">
-    <meta name="keywords" content="Vishnu Kumar, Full Stack Developer, Web Developer, App Developer, React, Node.js, Flutter, Firebase, Portfolio, GEC Ajmer, My Yojna, Code Logic, Smart Attendance">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Vishnu Kumar | Software Developer & Flutter Expert | GEC Ajmer</title>
+    <meta name="title" content="Vishnu Kumar | Software Developer & Flutter Expert">
+    <meta name="description" content="3rd Year B.Tech CSE Student at GEC Ajmer (CGPA 8.57). Flutter Developer, Full Stack MERN Engineer, 80+ LeetCode Solved in Java. Published Apps on Play Store. Open for Software Internships 2025.">
+    <meta name="keywords" content="Vishnu Kumar, Software Developer, Flutter Developer, Full Stack Developer India, MERN Stack Developer, GEC Ajmer, Flutter Firebase, Java DSA, LeetCode, Hire Developer India, Software Engineer Intern, React Developer, Node.js Developer, Hackathon Winner">
     <meta name="author" content="Vishnu Kumar">
     <meta name="robots" content="index, follow">
-    
-    <!-- Open Graph / Social Media -->
+
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Vishnu Kumar | Full Stack Developer Portfolio">
-    <meta property="og:description" content="Full Stack Developer specializing in Web & App Development. Check out my projects and experience.">
-    <meta property="og:url" content="https://vishnukumar.dev">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👨‍💻</text></svg>">
-    
-    <title>Vishnu Kumar | Full Stack Developer (Web + App)</title>
-    
-    <!-- Google Fonts -->
+    <meta property="og:url" content="https://prajapatvishnu7976-sys.github.io/My-portfolio/">
+    <meta property="og:title" content="Vishnu Kumar | Software Developer & Flutter Expert">
+    <meta property="og:description" content="Building production-grade apps & web solutions. 3rd Year CSE | 8.57 CGPA | Open for Internships.">
+    <meta property="og:image" content="your-photo.jpeg">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://prajapatvishnu7976-sys.github.io/My-portfolio/">
+    <meta property="twitter:title" content="Vishnu Kumar | Software Developer">
+    <meta property="twitter:description" content="Building production-grade apps & web solutions. Open for Software Internships 2025.">
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+    <link rel="apple-touch-icon" href="your-photo.jpeg">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
-   
-    <!-- Font Awesome Icons -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
-    <!-- Main Stylesheet -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
-    <!-- ============================================
-         PRELOADER
-         ============================================ -->
+
+    <!-- PRELOADER -->
     <div class="preloader" id="preloader">
-        <div class="preloader-content">
-            <div class="preloader-logo">
-                <span class="logo-text">VK</span>
-                <div class="logo-spinner"></div>
+        <div class="preloader-wrapper">
+            <div class="preloader-logo-wrapper">
+                <div class="preloader-logo">
+                    <div class="logo-circle">
+                        <span class="logo-letter">V</span>
+                        <span class="logo-letter">K</span>
+                    </div>
+                    <svg class="preloader-ring" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45" /></svg>
+                </div>
             </div>
-            <p class="preloader-text">Loading Portfolio<span class="loading-dots"></span></p>
-            <div class="preloader-progress">
-                <div class="progress-bar" id="progress-bar"></div>
+            <div class="preloader-progress-container">
+                <div class="preloader-progress-bar"><div class="progress-fill" id="progress-bar"></div></div>
+                <div class="preloader-info">
+                    <span class="loading-text">Loading Portfolio...</span>
+                    <span class="progress-percent" id="progress-percent">0%</span>
+                </div>
             </div>
-            <p class="progress-percent" id="progress-percent">0%</p>
         </div>
     </div>
 
-    <!-- ============================================
-         CUSTOM CURSOR
-         ============================================ -->
-    <div class="cursor-dot" id="cursor-dot"></div>
-    <div class="cursor-outline" id="cursor-outline"></div>
+    <div class="scroll-progress-container"><div class="scroll-progress-bar" id="scroll-progress"></div></div>
 
-    <!-- ============================================
-         NAVIGATION
-         ============================================ -->
+    <div class="theme-toast" id="theme-toast"><i class="fas fa-moon"></i><span>Theme Changed</span></div>
+
+    <!-- NAVBAR -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <a href="#home" class="nav-logo">
-                <div class="logo-icon">
-                    <span>V</span>
+            <a href="#home" class="nav-logo" aria-label="Vishnu Kumar Home">
+                <div class="logo-box">
+                    <div class="logo-inner">
+                        <span class="logo-text-v">V</span>
+                        <span class="logo-text-k">K</span>
+                    </div>
+                    <div class="logo-dot"></div>
+                </div>
+                <div class="logo-info">
+                    <span class="logo-name">Vishnu Kumar</span>
+                    <span class="logo-tagline">Software Developer</span>
                 </div>
             </a>
-            
+
             <ul class="nav-menu" id="nav-menu">
-                <li class="nav-item">
-                    <a href="#home" class="nav-link active" data-section="home">
-                        <i class="fas fa-home"></i>
-                        <span>Home</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#about" class="nav-link" data-section="about">
-                        <i class="fas fa-user"></i>
-                        <span>About</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#experience" class="nav-link" data-section="experience">
-                        <i class="fas fa-trophy"></i>
-                        <span>Experience</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#skills" class="nav-link" data-section="skills">
-                        <i class="fas fa-code"></i>
-                        <span>Skills</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#projects" class="nav-link" data-section="projects">
-                        <i class="fas fa-folder-open"></i>
-                        <span>Projects</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#contact" class="nav-link" data-section="contact">
-                        <i class="fas fa-envelope"></i>
-                        <span>Contact</span>
-                    </a>
-                </li>
+                <li class="nav-item"><a href="#home" class="nav-link active" data-section="home"><i class="fas fa-home nav-icon"></i><span class="nav-text">Home</span></a></li>
+                <li class="nav-item"><a href="#about" class="nav-link" data-section="about"><i class="fas fa-user-astronaut nav-icon"></i><span class="nav-text">About</span></a></li>
+                <li class="nav-item"><a href="#services" class="nav-link" data-section="services"><i class="fas fa-cogs nav-icon"></i><span class="nav-text">Services</span></a></li>
+                <li class="nav-item"><a href="#experience" class="nav-link" data-section="experience"><i class="fas fa-briefcase nav-icon"></i><span class="nav-text">Experience</span></a></li>
+                <li class="nav-item"><a href="#skills" class="nav-link" data-section="skills"><i class="fas fa-code nav-icon"></i><span class="nav-text">Skills</span></a></li>
+                <li class="nav-item"><a href="#projects" class="nav-link" data-section="projects"><i class="fas fa-rocket nav-icon"></i><span class="nav-text">Projects</span></a></li>
+                <li class="nav-item"><a href="#achievements" class="nav-link" data-section="achievements"><i class="fas fa-trophy nav-icon"></i><span class="nav-text">Awards</span></a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link" data-section="contact"><i class="fas fa-paper-plane nav-icon"></i><span class="nav-text">Contact</span></a></li>
             </ul>
-            
+
             <div class="nav-actions">
                 <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Theme">
                     <i class="fas fa-moon" id="theme-icon"></i>
                 </button>
-                <a href="#contact" class="nav-cta">Hire Me</a>
-                <button class="nav-toggle" id="nav-toggle" aria-label="Toggle Menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                <a href="Resume_vishnu.pdf" download class="nav-cta-primary"><i class="fas fa-download"></i><span>Resume</span></a>
+                <a href="#contact" class="nav-cta-secondary"><span>Hire Me</span><i class="fas fa-arrow-right"></i></a>
+                <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
+                    <span class="toggle-bar"></span><span class="toggle-bar"></span><span class="toggle-bar"></span>
                 </button>
             </div>
         </div>
     </nav>
 
-    <!-- ============================================
-         SCROLL PROGRESS BAR
-         ============================================ -->
-    <div class="scroll-progress" id="scroll-progress"></div>
+    <!-- HERO -->
+    <section class="hero" id="home">
+        <div class="hero-bg">
+            <div class="hero-gradient-1"></div>
+            <div class="hero-gradient-2"></div>
+            <div class="hero-grid"></div>
+        </div>
 
-    <!-- ============================================
-         MAIN CONTENT
-         ============================================ -->
-    <main class="main-content">
-        
-        <!-- ========== HERO SECTION ========== -->
-        <section class="hero" id="home">
-            <div class="hero-bg">
-                <div class="hero-gradient"></div>
-                <div class="hero-grid"></div>
-                <div class="floating-shapes">
-                    <div class="shape shape-1"></div>
-                    <div class="shape shape-2"></div>
-                    <div class="shape shape-3"></div>
+        <div class="hero-container">
+            <div class="hero-content" data-aos="fade-right" data-aos-duration="800">
+                <div class="hero-status">
+                    <div class="status-indicator"><span class="status-dot"></span><span class="status-ring"></span></div>
+                    <span class="status-text">Available for Internships</span>
+                    <span class="status-divider">|</span>
+                    <span class="status-location"><i class="fas fa-map-marker-alt"></i> India</span>
                 </div>
-            </div>
-            
-            <div class="hero-container">
-                <div class="hero-content">
-                    <div class="hero-badge">
-                        <span class="badge-dot"></span>
-                        <span>Available for Opportunities</span>
+
+                <h1 class="hero-title">
+                    <span class="title-greeting"><span class="wave">👋</span><span>Hello, I'm</span></span>
+                    <span class="title-name"><span class="name-first">Vishnu</span> <span class="name-last">Kumar</span><span class="name-cursor">|</span></span>
+                    <span class="title-role"><span class="role-prefix">I build</span> <span class="role-dynamic" id="typed-text"></span></span>
+                </h1>
+
+                <p class="hero-description">
+                    A passionate <strong class="highlight-text">Software Developer</strong> and
+                    <strong class="highlight-text">3rd-Year B.Tech CSE Student</strong> at
+                    <strong class="highlight-text">GEC Ajmer</strong> with a stellar
+                    <strong class="highlight-text gradient-text">8.57 CGPA</strong>.
+                    I specialize in crafting production-grade <strong class="highlight-text">Flutter apps</strong>,
+                    full-stack <strong class="highlight-text">MERN</strong> web solutions, and solving complex problems with <strong class="highlight-text">Java DSA</strong>.
+                </p>
+
+                <div class="hero-stats">
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-graduation-cap"></i></div>
+                        <span class="stat-value" data-count="8.57" data-decimal="2">0</span>
+                        <span class="stat-label">CGPA</span>
                     </div>
-                    
-                    <h1 class="hero-title">
-                        <span class="title-line">Hi, I'm</span>
-                        <span class="title-name">Vishnu Kumar</span>
-                        <span class="title-role" id="typed-text"></span>
-                    </h1>
-                    
-                    <p class="hero-description">
-                        A passionate <strong>Full Stack Developer</strong> crafting exceptional digital experiences. 
-                        Currently a <strong>B.Tech CSE Student</strong> at GEC Ajmer, specializing in 
-                        <strong>Web & App Development</strong> with a strong foundation in <strong>DSA</strong>.
-                    </p>
-                    
-                    <div class="hero-stats">
-                        <div class="stat-item">
-                            <span class="stat-number" data-count="3">0</span>
-                            <span class="stat-label">Projects Built</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number" data-count="2">0</span>
-                            <span class="stat-label">Hackathons</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number" data-count="10">0</span>
-                            <span class="stat-label">Technologies</span>
-                        </div>
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-code"></i></div>
+                        <span class="stat-value" data-count="80" data-suffix="+">0</span>
+                        <span class="stat-label">LeetCode Solved</span>
                     </div>
-                    
-                    <div class="hero-cta">
-                        <a href="#projects" class="btn btn-primary">
-                            <span>View My Work</span>
-                            <i class="fas fa-arrow-right"></i>
-                        </a>
-                        <a href="#contact" class="btn btn-secondary">
-                            <span>Let's Talk</span>
-                            <i class="fas fa-comments"></i>
-                        </a>
-                        <a href="Resume_vishnu.pdf" class="btn btn-outline" download>
-                            <span>Download CV</span>
-                            <i class="fas fa-download"></i>
-                        </a>
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-rocket"></i></div>
+                        <span class="stat-value" data-count="7" data-suffix="+">0</span>
+                        <span class="stat-label">Projects Built</span>
                     </div>
-                    
-                    <div class="hero-social">
-                        <a href="https://github.com/prajapatvishnu7976-sys" target="_blank" class="social-link" aria-label="GitHub">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/vishnu-kumar-545037327/" target="_blank" class="social-link" aria-label="LinkedIn">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="#" target="_blank" class="social-link" aria-label="Twitter">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="mailto:prajapatvishnu7976@gmail.com" class="social-link" aria-label="Email">
-                            <i class="fas fa-envelope"></i>
-                        </a>
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-handshake"></i></div>
+                        <span class="stat-value" data-count="2" data-suffix="+">0</span>
+                        <span class="stat-label">Happy Clients</span>
                     </div>
                 </div>
-                
-                <div class="hero-visual">
-                    <div class="hero-image-wrapper">
-                        <div class="hero-image-bg"></div>
-                        <div class="hero-image">
-                            <div class="profile-photo">
-                                <img src="your-photo.jpeg" alt="Vishnu Kumar" id="profile-img" onerror="this.style.display='none'; document.getElementById('photo-placeholder').style.display='flex';">
-                                <div class="photo-placeholder" id="photo-placeholder" style="display: none;">
-                                    <i class="fas fa-user"></i>
-                                    <span>Add Photo</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="hero-image-decoration">
-                            <div class="decoration-ring ring-1"></div>
-                            <div class="decoration-ring ring-2"></div>
-                        </div>
+
+                <div class="hero-cta">
+                    <a href="#projects" class="btn btn-primary"><span class="btn-content"><i class="fas fa-rocket"></i><span>Explore Projects</span></span></a>
+                    <a href="#contact" class="btn btn-secondary"><span class="btn-content"><i class="fas fa-paper-plane"></i><span>Let's Connect</span></span></a>
+                    <a href="Resume_vishnu.pdf" download class="btn btn-outline"><span class="btn-content"><i class="fas fa-file-download"></i><span>Download CV</span></span></a>
+                </div>
+
+                <div class="hero-tech">
+                    <span class="tech-label">Built with:</span>
+                    <div class="tech-icons">
+                        <div class="tech-icon-wrapper" title="Flutter"><i class="devicon-flutter-plain colored"></i></div>
+                        <div class="tech-icon-wrapper" title="Java"><i class="devicon-java-plain colored"></i></div>
+                        <div class="tech-icon-wrapper" title="JavaScript"><i class="devicon-javascript-plain colored"></i></div>
+                        <div class="tech-icon-wrapper" title="React"><i class="devicon-react-original colored"></i></div>
+                        <div class="tech-icon-wrapper" title="Node.js"><i class="devicon-nodejs-plain colored"></i></div>
+                        <div class="tech-icon-wrapper" title="Firebase"><i class="devicon-firebase-plain colored"></i></div>
+                        <div class="tech-icon-wrapper" title="Python"><i class="devicon-python-plain colored"></i></div>
+                        <div class="tech-icon-wrapper" title="MongoDB"><i class="devicon-mongodb-plain colored"></i></div>
+                    </div>
+                </div>
+
+                <div class="hero-social">
+                    <span class="social-label">Find me on:</span>
+                    <div class="social-links">
+                        <a href="https://github.com/prajapatvishnu7976-sys" target="_blank" class="social-link"><i class="fab fa-github"></i><span class="link-tooltip">GitHub</span></a>
+                        <a href="https://www.linkedin.com/in/vishnu-kumar-545037327/" target="_blank" class="social-link"><i class="fab fa-linkedin-in"></i><span class="link-tooltip">LinkedIn</span></a>
+                        <a href="mailto:prajapatvishnu7976@gmail.com" class="social-link"><i class="fas fa-envelope"></i><span class="link-tooltip">Email</span></a>
+                        <a href="https://www.instagram.com/prjpt_vishnu/" target="_blank" class="social-link"><i class="fab fa-instagram"></i><span class="link-tooltip">Instagram</span></a>
+                        <a href="tel:+917976846734" class="social-link"><i class="fas fa-phone"></i><span class="link-tooltip">Call</span></a>
                     </div>
                 </div>
             </div>
-            
-        </section>
 
-        <!-- ========== ABOUT SECTION ========== -->
-        <section class="about" id="about">
-            <div class="section-container">
-                <div class="section-header">
-                    <span class="section-tag"><i class="fas fa-user"></i> Introduction</span>
-                    <h2 class="section-title">About Me</h2>
-                    <p class="section-subtitle">Get to know me better - my journey, passions, and what drives me</p>
-                </div>
-                
-                <div class="about-content">
-                    <div class="about-text">
-                        <div class="about-card">
-                            <div class="about-intro">
-                                <h3>Hello! I'm Vishnu 👋</h3>
-                                <p>
-                                    I'm a passionate <strong>Full Stack Developer</strong> currently pursuing 
-                                    <strong>B.Tech in Computer Science Engineering</strong> at Government Engineering College, Ajmer. 
-                                    I'm in my <strong>1st year (2024-2028 batch)</strong> and have been deeply involved in building 
-                                    real-world applications that solve genuine problems.
-                                </p>
-                                <p>
-                                    My journey in tech started with curiosity about how things work, and it has evolved 
-                                    into a full-fledged passion for creating impactful digital solutions. I specialize in 
-                                    both <strong>Web Development</strong> (React, Node.js, MongoDB) and 
-                                    <strong>App Development</strong> (Flutter, Firebase), making me a versatile developer 
-                                    capable of building complete solutions from scratch.
-                                </p>
-                            </div>
-                            
-                            <div class="about-highlights">
-                                <div class="highlight-item">
-                                    <div class="highlight-icon">
-                                        <i class="fas fa-graduation-cap"></i>
-                                    </div>
-                                    <div class="highlight-content">
-                                        <h4>Education</h4>
-                                        <p>B.Tech CSE - GEC Ajmer</p>
-                                        <span>2024 - 2028</span>
-                                    </div>
-                                </div>
-                                
-                                <div class="highlight-item">
-                                    <div class="highlight-icon">
-                                        <i class="fas fa-map-marker-alt"></i>
-                                    </div>
-                                    <div class="highlight-content">
-                                        <h4>Location</h4>
-                                        <p>Ajmer, Rajasthan</p>
-                                        <span id="current-time">Loading time...</span>
-                                    </div>
-                                </div>
-                                
-                                <div class="highlight-item">
-                                    <div class="highlight-icon">
-                                        <i class="fas fa-certificate"></i>
-                                    </div>
-                                    <div class="highlight-content">
-                                        <h4>Certifications</h4>
-                                        <p>WordPress Certified</p>
-                                        <span>+ 2 Hackathon Certificates</span>
-                                    </div>
-                                </div>
-                                
-                                <div class="highlight-item">
-                                    <div class="highlight-icon">
-                                        <i class="fas fa-briefcase"></i>
-                                    </div>
-                                    <div class="highlight-content">
-                                        <h4>Status</h4>
-                                        <p>Open to Opportunities</p>
-                                        <span>Internships & Projects</span>
-                                    </div>
+            <div class="hero-visual" data-aos="fade-left" data-aos-duration="800">
+                <div class="profile-card-wrapper">
+                    <div class="profile-card">
+                        <div class="profile-rings">
+                            <div class="ring ring-outer"></div>
+                            <div class="ring ring-middle"></div>
+                            <div class="ring ring-inner"></div>
+                        </div>
+
+                        <div class="profile-image-container">
+                            <div class="profile-image">
+                                <img src="your-photo.jpeg" alt="Vishnu Kumar" id="profile-img"
+                                     onerror="this.style.display='none'; document.getElementById('photo-placeholder').style.display='flex';">
+                                <div class="photo-placeholder" id="photo-placeholder" style="display:none;">
+                                    <i class="fas fa-user-tie"></i>
+                                    <span>Vishnu Kumar</span>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    
-                    <div class="about-info">
-                        <div class="info-card services-card">
-                            <h3><i class="fas fa-laptop-code"></i> What I Do</h3>
-                            <div class="services-list">
-                                <div class="service-item">
-                                    <div class="service-icon">
-                                        <i class="fas fa-globe"></i>
-                                    </div>
-                                    <div class="service-content">
-                                        <h4>Web Development</h4>
-                                        <p>Building responsive, modern web applications with React, Node.js, and MongoDB</p>
-                                    </div>
-                                </div>
-                                
-                                <div class="service-item">
-                                    <div class="service-icon">
-                                        <i class="fas fa-mobile-alt"></i>
-                                    </div>
-                                    <div class="service-content">
-                                        <h4>App Development</h4>
-                                        <p>Creating cross-platform mobile apps using Flutter and Firebase</p>
-                                    </div>
-                                </div>
-                                
-                                <div class="service-item">
-                                    <div class="service-icon">
-                                        <i class="fas fa-brain"></i>
-                                    </div>
-                                    <div class="service-content">
-                                        <h4>Problem Solving</h4>
-                                        <p>Strong DSA skills with Java, competitive programming enthusiast</p>
-                                    </div>
+                </div>
+
+                <div class="code-terminal">
+                    <div class="terminal-header">
+                        <div class="terminal-controls"><span class="control-btn red"></span><span class="control-btn yellow"></span><span class="control-btn green"></span></div>
+                        <span class="terminal-title">vishnu@portfolio: ~</span>
+                        <span class="terminal-time" id="terminal-time">00:00</span>
+                    </div>
+                    <div class="terminal-body">
+                        <div class="terminal-line">
+                            <span class="terminal-prompt">$</span>
+                            <span class="terminal-command" id="terminal-command"></span>
+                            <span class="terminal-cursor">|</span>
+                        </div>
+                        <div class="terminal-output" id="terminal-output"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+            <span class="scroll-text">Scroll to Explore</span>
+            <i class="fas fa-chevron-down scroll-arrow"></i>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about-section" id="about">
+        <div class="section-wrapper">
+            <div class="section-header-premium" data-aos="fade-up">
+                <div class="header-tag"><span class="tag-dot"></span><span class="tag-text">GET TO KNOW ME</span><span class="tag-dot"></span></div>
+                <h2 class="section-title-premium">About <span class="gradient-text">Me</span></h2>
+                <p class="section-subtitle-premium">Passionate developer on a mission to build impactful digital products</p>
+                <div class="header-divider"><span class="divider-line"></span><i class="fas fa-code divider-icon"></i><span class="divider-line"></span></div>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-left" data-aos="fade-right">
+                    <div class="story-card">
+                        <div class="story-header">
+                            <div class="story-avatar">
+                                <img src="your-photo.jpeg" alt="Vishnu" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                <div class="avatar-placeholder" style="display:none;"><i class="fas fa-user"></i></div>
+                                <div class="online-badge"></div>
+                            </div>
+                            <div class="story-intro">
+                                <h3>Vishnu Kumar</h3>
+                                <p>Software Developer & B.Tech Student</p>
+                                <div class="story-tags">
+                                    <span class="story-tag"><i class="fas fa-map-marker-alt"></i> Rajasthan, India</span>
+                                    <span class="story-tag online"><span class="dot"></span> Available</span>
                                 </div>
                             </div>
                         </div>
-                        
-                        <div class="info-card quick-facts-card">
-                            <h3><i class="fas fa-bolt"></i> Quick Facts</h3>
-                            <ul class="quick-facts-list">
-                                <li>
-                                    <i class="fas fa-check-circle"></i>
-                                    <span>Published app on Google Play Store</span>
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i>
-                                    <span>2 Hackathon Participation Certificates</span>
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i>
-                                    <span>WordPress Participation Certificate</span>
-                                </li>
-                                <li>
-                                    <i class="fas fa-check-circle"></i>
-                                    <span>Built 3+ production-ready projects</span>
-                                </li>
+
+                        <div class="story-body">
+                            <p class="story-paragraph">
+                                <span class="paragraph-icon">👨‍💻</span>
+                                Hey there! I'm <strong>Vishnu Kumar</strong>, a passionate
+                                <strong>3rd-year B.Tech Computer Science Engineering</strong> student at
+                                <strong>Government Engineering College, Ajmer</strong>. My journey in software development
+                                started with curiosity and has evolved into building production-grade applications used by real people.
+                            </p>
+                            <p class="story-paragraph">
+                                <span class="paragraph-icon">🚀</span>
+                                I've successfully <strong>published apps on Google Play Store</strong>,
+                                completed a <strong>paid Software Development internship at Unified Mentor</strong> where I built
+                                <strong>2 full-stack MERN platforms (RentiGo & EntreSkillHub)</strong>,
+                                delivered <strong>multiple freelance projects</strong> for clients,
+                                and won <strong>2nd position in CodeWars Hackathon</strong>.
+                                I specialize in <strong>Flutter development</strong> with
+                                <strong>Firebase backend</strong>, full-stack web solutions, and AI integrations using Gemini API.
+                            </p>
+                            <p class="story-paragraph">
+                                <span class="paragraph-icon">🎯</span>
+                                Beyond code, I'm actively solving <strong>Data Structures & Algorithms problems (80+ on LeetCode)</strong>
+                                in Java and rigorously preparing for the <strong>GATE 2026 examination</strong> to strengthen my
+                                foundation in core computer science subjects.
+                            </p>
+                            <div class="story-quote">
+                                <i class="fas fa-quote-left"></i>
+                                <p>Great software isn't just about writing code — it's about solving real problems that make people's lives better.</p>
+                                <i class="fas fa-quote-right"></i>
+                            </div>
+                        </div>
+
+                        <div class="story-actions">
+                            <a href="Resume_vishnu.pdf" download class="story-btn primary"><i class="fas fa-download"></i><span>Download Resume</span></a>
+                            <a href="#contact" class="story-btn secondary"><i class="fas fa-paper-plane"></i><span>Contact Me</span></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-right" data-aos="fade-left">
+                    <div class="info-card-premium">
+                        <div class="card-header"><div class="header-icon"><i class="fas fa-id-card"></i></div><h3>Personal Information</h3></div>
+                        <div class="info-list">
+                            <div class="info-item"><span class="info-key"><i class="fas fa-user"></i> Full Name</span><span class="info-value">Vishnu Kumar</span></div>
+                            <div class="info-item"><span class="info-key"><i class="fas fa-envelope"></i> Email</span><a href="mailto:prajapatvishnu7976@gmail.com" class="info-value link">prajapatvishnu7976@gmail.com</a></div>
+                            <div class="info-item"><span class="info-key"><i class="fas fa-phone"></i> Phone</span><a href="tel:+917976846734" class="info-value link">+91 7976846734</a></div>
+                            <div class="info-item"><span class="info-key"><i class="fas fa-map-marker-alt"></i> Location</span><span class="info-value">Sirohi, Rajasthan, India</span></div>
+                            <div class="info-item"><span class="info-key"><i class="fas fa-graduation-cap"></i> Degree</span><span class="info-value">B.Tech CSE (2024-2028)</span></div>
+                            <div class="info-item"><span class="info-key"><i class="fas fa-university"></i> College</span><span class="info-value">GEC Ajmer</span></div>
+                            <div class="info-item"><span class="info-key"><i class="fas fa-chart-line"></i> CGPA</span><span class="info-value highlight">8.57 / 10</span></div>
+                            <div class="info-item"><span class="info-key"><i class="fas fa-language"></i> Languages</span><span class="info-value">English, Hindi</span></div>
+                        </div>
+                    </div>
+
+                    <div class="info-card-premium">
+                        <div class="card-header"><div class="header-icon"><i class="fas fa-lightbulb"></i></div><h3>What Drives Me</h3></div>
+                        <div class="drives-grid">
+                            <div class="drive-item">
+                                <div class="drive-icon flutter"><i class="fas fa-mobile-screen-button"></i></div>
+                                <div class="drive-content"><h4>Building Apps</h4><p>Cross-platform mobile apps that solve real problems</p></div>
+                            </div>
+                            <div class="drive-item">
+                                <div class="drive-icon code"><i class="fas fa-code"></i></div>
+                                <div class="drive-content"><h4>Clean Code</h4><p>Writing maintainable, scalable, and efficient code</p></div>
+                            </div>
+                            <div class="drive-item">
+                                <div class="drive-icon brain"><i class="fas fa-brain"></i></div>
+                                <div class="drive-content"><h4>Problem Solving</h4><p>Breaking down complex problems using DSA</p></div>
+                            </div>
+                            <div class="drive-item">
+                                <div class="drive-icon rocket"><i class="fas fa-rocket"></i></div>
+                                <div class="drive-content"><h4>Shipping Fast</h4><p>Delivering production-ready products quickly</p></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="education-section" data-aos="fade-up">
+                <div class="subsection-header"><h3><i class="fas fa-graduation-cap"></i> Education Journey</h3><p>My academic path shaping me into a Software Engineer</p></div>
+                <div class="education-timeline">
+                    <div class="edu-item" data-aos="fade-up">
+                        <div class="edu-year">2024 - 2028</div>
+                        <div class="edu-card">
+                            <div class="edu-icon"><i class="fas fa-university"></i></div>
+                            <div class="edu-content">
+                                <h4>Bachelor of Technology</h4>
+                                <h5>Computer Science & Engineering</h5>
+                                <p class="edu-institute">Government Engineering College, Ajmer</p>
+                                <div class="edu-stats">
+                                    <span class="edu-stat"><i class="fas fa-chart-line"></i> CGPA: 8.57/10</span>
+                                    <span class="edu-stat"><i class="fas fa-calendar"></i> Current: 5th Semester</span>
+                                </div>
+                                <p class="edu-desc">Currently in 3rd year focusing on advanced topics like Operating Systems, DBMS, Computer Networks, and Software Engineering. Actively participating in hackathons and building real-world projects.</p>
+                                <div class="edu-badges"><span class="edu-badge">Top Performer</span><span class="edu-badge">GATE Aspirant</span><span class="edu-badge">Active Developer</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="edu-item" data-aos="fade-up">
+                        <div class="edu-year">2010 - 2024</div>
+                        <div class="edu-card">
+                            <div class="edu-icon"><i class="fas fa-school"></i></div>
+                            <div class="edu-content">
+                                <h4>Higher Secondary (12th)</h4>
+                                <h5>Science Stream - PCM</h5>
+                                <p class="edu-institute">St. John's School, Abu Road</p>
+                                <div class="edu-stats"><span class="edu-stat"><i class="fas fa-book"></i> Physics, Chemistry, Mathematics</span></div>
+                                <p class="edu-desc">Completed schooling with focus on Mathematics and Science. Developed strong analytical thinking which laid the foundation for my programming journey.</p>
+                                <div class="edu-badges"><span class="edu-badge">Science Student</span><span class="edu-badge">PCM Core</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services-section" id="services">
+        <div class="section-wrapper">
+            <div class="section-header-premium" data-aos="fade-up">
+                <div class="header-tag"><span class="tag-dot"></span><span class="tag-text">WHAT I OFFER</span><span class="tag-dot"></span></div>
+                <h2 class="section-title-premium">My <span class="gradient-text">Services</span></h2>
+                <p class="section-subtitle-premium">End-to-end software development services tailored to your needs</p>
+                <div class="header-divider"><span class="divider-line"></span><i class="fas fa-cogs divider-icon"></i><span class="divider-line"></span></div>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card" data-aos="fade-up">
+                    <div class="service-number">01</div>
+                    <div class="service-icon-wrapper"><div class="service-icon flutter-gradient"><i class="fas fa-mobile-alt"></i></div></div>
+                    <h3 class="service-title">Mobile App Development</h3>
+                    <p class="service-description">Cross-platform mobile apps using Flutter & Firebase. Built for performance, scalability, and beautiful user experience across iOS and Android.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Flutter & Dart Development</li>
+                        <li><i class="fas fa-check"></i> Firebase Authentication</li>
+                        <li><i class="fas fa-check"></i> Real-time Database Integration</li>
+                        <li><i class="fas fa-check"></i> Play Store Publishing</li>
+                    </ul>
+                    <div class="service-footer"><span class="service-badge">Published Apps</span><a href="#projects" class="service-link">View Work <i class="fas fa-arrow-right"></i></a></div>
+                </div>
+
+                <div class="service-card featured" data-aos="fade-up">
+                    <div class="service-badge-top">Most Popular</div>
+                    <div class="service-number">02</div>
+                    <div class="service-icon-wrapper"><div class="service-icon web-gradient"><i class="fas fa-globe"></i></div></div>
+                    <h3 class="service-title">Full Stack Web Development</h3>
+                    <p class="service-description">Modern, responsive web applications with React, Node.js, Express, and MongoDB. From landing pages to complex SaaS platforms.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> React.js & Modern JavaScript</li>
+                        <li><i class="fas fa-check"></i> Node.js & Express Backend</li>
+                        <li><i class="fas fa-check"></i> MongoDB & Firebase Database</li>
+                        <li><i class="fas fa-check"></i> REST API Development</li>
+                    </ul>
+                    <div class="service-footer"><span class="service-badge">2 Live MERN Apps</span><a href="#projects" class="service-link">View Work <i class="fas fa-arrow-right"></i></a></div>
+                </div>
+
+                <div class="service-card" data-aos="fade-up">
+                    <div class="service-number">03</div>
+                    <div class="service-icon-wrapper"><div class="service-icon ai-gradient"><i class="fas fa-robot"></i></div></div>
+                    <h3 class="service-title">AI-Powered Solutions</h3>
+                    <p class="service-description">Integrating cutting-edge AI capabilities into your applications using Gemini API, chatbots, and intelligent automation systems.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Gemini AI Integration</li>
+                        <li><i class="fas fa-check"></i> Custom Chatbot Development</li>
+                        <li><i class="fas fa-check"></i> FastAPI Backend</li>
+                    </ul>
+                    <div class="service-footer"><span class="service-badge">Hackathon Winner</span><a href="#projects" class="service-link">View Work <i class="fas fa-arrow-right"></i></a></div>
+                </div>
+
+                <div class="service-card" data-aos="fade-up">
+                    <div class="service-number">04</div>
+                    <div class="service-icon-wrapper"><div class="service-icon freelance-gradient"><i class="fas fa-handshake"></i></div></div>
+                    <h3 class="service-title">Freelance & Consulting</h3>
+                    <p class="service-description">Custom software development, technical consulting, and project delivery for startups and individuals. Trusted by multiple clients.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Custom App Development</li>
+                        <li><i class="fas fa-check"></i> Code Review & Optimization</li>
+                        <li><i class="fas fa-check"></i> Project Delivery & Handover</li>
+                    </ul>
+                    <div class="service-footer"><span class="service-badge">Trusted by Clients</span><a href="#contact" class="service-link">Hire Me <i class="fas fa-arrow-right"></i></a></div>
+                </div>
+
+                <div class="service-card" data-aos="fade-up">
+                    <div class="service-number">05</div>
+                    <div class="service-icon-wrapper"><div class="service-icon dsa-gradient"><i class="fas fa-brain"></i></div></div>
+                    <h3 class="service-title">DSA & Coding Mentoring</h3>
+                    <p class="service-description">Help fellow students master Data Structures & Algorithms in Java. Interview preparation, concept clarity, and problem-solving strategies.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Java DSA Fundamentals</li>
+                        <li><i class="fas fa-check"></i> LeetCode Problem Solving</li>
+                        <li><i class="fas fa-check"></i> Mock Coding Interviews</li>
+                    </ul>
+                    <div class="service-footer"><span class="service-badge">80+ Solved</span><a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a></div>
+                </div>
+
+                <div class="service-card" data-aos="fade-up">
+                    <div class="service-number">06</div>
+                    <div class="service-icon-wrapper"><div class="service-icon ui-gradient"><i class="fas fa-palette"></i></div></div>
+                    <h3 class="service-title">UI/UX Implementation</h3>
+                    <p class="service-description">Converting Figma designs into pixel-perfect, responsive, and accessible user interfaces for web and mobile applications.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Figma to Code Conversion</li>
+                        <li><i class="fas fa-check"></i> Responsive Design</li>
+                        <li><i class="fas fa-check"></i> Dark/Light Themes</li>
+                    </ul>
+                    <div class="service-footer"><span class="service-badge">Pixel Perfect</span><a href="#projects" class="service-link">View Work <i class="fas fa-arrow-right"></i></a></div>
+                </div>
+            </div>
+
+            <div class="services-cta-banner" data-aos="zoom-in">
+                <div class="cta-content"><h3>Have a project in mind?</h3><p>Let's discuss how I can help bring your ideas to life with modern technology.</p></div>
+                <a href="#contact" class="cta-btn"><span>Let's Talk</span><i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="experience-section" id="experience">
+        <div class="section-wrapper">
+            <div class="section-header-premium" data-aos="fade-up">
+                <div class="header-tag"><span class="tag-dot"></span><span class="tag-text">MY JOURNEY</span><span class="tag-dot"></span></div>
+                <h2 class="section-title-premium">Work <span class="gradient-text">Experience</span></h2>
+                <p class="section-subtitle-premium">Real-world experience through internships, freelancing & competitive hackathons</p>
+                <div class="header-divider"><span class="divider-line"></span><i class="fas fa-briefcase divider-icon"></i><span class="divider-line"></span></div>
+            </div>
+
+            <div class="experience-tabs" data-aos="fade-up">
+                <button class="exp-tab active" data-tab="work"><i class="fas fa-briefcase"></i><span>Internship</span></button>
+                <button class="exp-tab" data-tab="freelance"><i class="fas fa-handshake"></i><span>Freelance</span></button>
+                <button class="exp-tab" data-tab="hackathons"><i class="fas fa-trophy"></i><span>Hackathons</span></button>
+            </div>
+
+            <div class="exp-content active" id="tab-work">
+                <div class="exp-card-premium">
+                    <div class="exp-card-left">
+                        <div class="company-logo"><i class="fas fa-building"></i></div>
+                        <div class="exp-duration">
+                            <span class="duration-badge">3 Months</span>
+                            <span class="stipend-badge">Paid Internship</span>
+                        </div>
+                    </div>
+                    <div class="exp-card-right">
+                        <div class="exp-header">
+                            <div><h3 class="exp-role">Software Development Intern</h3><h4 class="exp-company"><i class="fas fa-building"></i> Unified Mentor</h4></div>
+                            <span class="exp-type">Remote Internship</span>
+                        </div>
+                        <p class="exp-summary">Successfully completed a 3-month Software Development internship where I built 2 production-ready full-stack MERN projects based on client requirements, earning a performance-based stipend. Both projects are live and deployed on Vercel.</p>
+                        <div class="exp-highlights">
+                            <h5><i class="fas fa-star"></i> Key Highlights</h5>
+                            <ul>
+                                <li><i class="fas fa-check-circle"></i><span>Built <strong>RentiGo</strong> — a vehicle rental platform with multi-role dashboards, real-time booking tracking & PDF invoicing</span></li>
+                                <li><i class="fas fa-check-circle"></i><span>Built <strong>EntreSkillHub</strong> — a skill-to-startup platform with AI matching engine & mentor booking system</span></li>
+                                <li><i class="fas fa-check-circle"></i><span>Deployed both projects to <strong>production on Vercel</strong> with MongoDB Atlas backend</span></li>
+                                <li><i class="fas fa-check-circle"></i><span>Earned a <strong>performance-based stipend</strong> for quality and timely delivery</span></li>
+                                <li><i class="fas fa-check-circle"></i><span>Collaborated with team members using <strong>Git version control</strong></span></li>
+                            </ul>
+                        </div>
+                        <div class="exp-skills-used">
+                            <h5><i class="fas fa-code"></i> Technologies Used</h5>
+                            <div class="skills-chips"><span class="chip">React</span><span class="chip">Node.js</span><span class="chip">Express</span><span class="chip">MongoDB</span><span class="chip">Tailwind CSS</span><span class="chip">JWT Auth</span><span class="chip">REST APIs</span><span class="chip">Git</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="exp-content" id="tab-freelance">
+                <div class="exp-card-premium">
+                    <div class="exp-card-left">
+                        <div class="company-logo freelance"><i class="fas fa-user-tie"></i></div>
+                        <div class="exp-duration">
+                            <span class="duration-badge">2024 - Present</span>
+                            <span class="stipend-badge success">Freelance Success</span>
+                        </div>
+                    </div>
+                    <div class="exp-card-right">
+                        <div class="exp-header">
+                            <div><h3 class="exp-role">Independent Freelance Developer</h3><h4 class="exp-company"><i class="fas fa-user-check"></i> Self-Employed</h4></div>
+                            <span class="exp-type freelance">Freelance</span>
+                        </div>
+                        <p class="exp-summary">Successfully delivered freelance projects for clients, managing complete project lifecycle from requirements gathering to final handover.</p>
+                        <div class="freelance-projects">
+                            <div class="fl-project">
+                                <div class="fl-project-header"><h5><i class="fas fa-gamepad"></i> Custom Gaming Website</h5><span class="revenue-badge">Delivered</span></div>
+                                <p>Designed and developed a responsive gaming website for a client. Delivered complete source code with deployment setup and post-launch support.</p>
+                                <div class="fl-tech"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+                            </div>
+                        </div>
+                        <div class="exp-highlights">
+                            <h5><i class="fas fa-chart-line"></i> Business Metrics</h5>
+                            <ul>
+                                <li><i class="fas fa-check-circle"></i><span><strong>100% Client Satisfaction</strong> on all delivered projects</span></li>
+                                <li><i class="fas fa-check-circle"></i><span><strong>On-time delivery</strong> for every project milestone</span></li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
 
-        <!-- ========== EXPERIENCE SECTION ========== -->
-        <section class="experience" id="experience">
-            <div class="section-container">
-                <div class="section-header">
-                    <span class="section-tag"><i class="fas fa-trophy"></i> Experience</span>
-                    <h2 class="section-title">Hackathon Journey</h2>
-                    <p class="section-subtitle">Building innovative solutions under pressure and tight deadlines</p>
+            <div class="exp-content" id="tab-hackathons">
+                <div class="hackathon-grid">
+                    <div class="hackathon-card winner">
+                        <div class="hack-trophy"><i class="fas fa-trophy"></i></div>
+                        <div class="hack-rank">2nd Rank</div>
+                        <h3>CodeWars College Hackathon</h3>
+                        <p class="hack-project"><strong>Project:</strong> AI-Based Utility Assistant</p>
+                        <p class="hack-desc">Built an intelligent AI assistant integrating Weather API, GitHub APIs, and Gemini LLM. Features included smart repo recommendations and real-time data fetching.</p>
+                        <div class="hack-tech"><span class="chip">Gemini API</span><span class="chip">FastAPI</span><span class="chip">Python</span></div>
+                        <div class="hack-footer"><span class="hack-duration"><i class="fas fa-clock"></i> 24 Hours</span><span class="hack-badge winner-badge"><i class="fas fa-medal"></i> Winner</span></div>
+                    </div>
+
+                    <div class="hackathon-card finalist">
+                        <div class="hack-trophy silver"><i class="fas fa-award"></i></div>
+                        <div class="hack-rank">Grand Finalist</div>
+                        <h3>SGVU Jaipur 24-Hour Hackathon</h3>
+                        <p class="hack-project"><strong>Project:</strong> Smart Tourism Navigation App</p>
+                        <p class="hack-desc">Developed an intelligent tourism app with crowd density analysis and smart location recommendations for optimized travel routes.</p>
+                        <div class="hack-tech"><span class="chip">Flutter</span><span class="chip">Maps API</span><span class="chip">Firebase</span></div>
+                        <div class="hack-footer"><span class="hack-duration"><i class="fas fa-clock"></i> 24 Hours</span><span class="hack-badge finalist-badge"><i class="fas fa-flag"></i> Finalist</span></div>
+                    </div>
+
+                    <div class="hackathon-card participant">
+                        <div class="hack-trophy bronze"><i class="fas fa-certificate"></i></div>
+                        <div class="hack-rank">Participant</div>
+                        <h3>Shankara Global Hackathon</h3>
+                        <p class="hack-project"><strong>Project:</strong> Finsarthi – AI Finance Assistant</p>
+                        <p class="hack-desc">Built an AI-powered personal finance tracker with Gemini-powered chatbot, goal-based savings tracking, and visual analytics dashboard.</p>
+                        <div class="hack-tech"><span class="chip">JavaScript</span><span class="chip">Gemini API</span><span class="chip">HTML/CSS</span></div>
+                        <div class="hack-footer"><span class="hack-duration"><i class="fas fa-clock"></i> 24 Hours</span><span class="hack-badge participant-badge"><i class="fas fa-users"></i> Participant</span></div>
+                    </div>
                 </div>
-                
-                <div class="experience-timeline">
-                    <div class="timeline-line"></div>
-                    
-                    <!-- Hackathon 1 -->
-                    <div class="timeline-item">
-                        <div class="timeline-marker">
-                            <i class="fas fa-trophy"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="skills-section" id="skills">
+        <div class="section-wrapper">
+            <div class="section-header-premium" data-aos="fade-up">
+                <div class="header-tag"><span class="tag-dot"></span><span class="tag-text">TECH ARSENAL</span><span class="tag-dot"></span></div>
+                <h2 class="section-title-premium">Skills & <span class="gradient-text">Technologies</span></h2>
+                <p class="section-subtitle-premium">Tools and technologies I use to craft exceptional digital experiences</p>
+                <div class="header-divider"><span class="divider-line"></span><i class="fas fa-code divider-icon"></i><span class="divider-line"></span></div>
+            </div>
+
+            <div class="skills-container">
+                <div class="skill-section-block" data-aos="fade-up">
+                    <div class="skill-block-header"><div class="block-icon"><i class="fas fa-terminal"></i></div><div><h3>Programming Languages</h3><p>Languages I speak fluently</p></div></div>
+                    <div class="skills-cards-grid">
+                        <div class="skill-card-premium">
+                            <div class="skill-top"><i class="devicon-java-plain colored"></i><span class="skill-level">Expert</span></div>
+                            <h4>Java</h4><p>Primary language for DSA & backend development</p>
+                            <div class="skill-progress-bar"><div class="skill-progress-fill" data-progress="92"></div></div>
+                            <span class="skill-percent">92%</span>
+                            <div class="skill-meta"><span><i class="fas fa-code"></i> 80+ Problems</span><span><i class="fas fa-clock"></i> 2+ Years</span></div>
                         </div>
-                        <div class="timeline-card">
-                            <div class="timeline-header">
-                                <div class="timeline-badge">Hackathon</div>
-                                <span class="timeline-date">
-                                    <i class="fas fa-calendar-alt"></i> 2025
-                                </span>
-                            </div>
-                            <h3 class="timeline-title">
-                                <i class="fas fa-map-marked-alt"></i>
-                                Tourist Navigation & Crowd Management App
-                            </h3>
-                            <h4 class="timeline-venue">
-                                <i class="fas fa-university"></i>
-                                Suresh Gyan University Hackathon
-                            </h4>
-                            
-                            <div class="timeline-content">
-                                <div class="problem-solution">
-                                    <div class="ps-item">
-                                        <span class="ps-label">
-                                            <i class="fas fa-exclamation-triangle"></i> Problem
-                                        </span>
-                                        <p>Tourists struggle with finding optimal routes and often end up at overcrowded places, leading to a poor travel experience.</p>
-                                    </div>
-                                    <div class="ps-item">
-                                        <span class="ps-label">
-                                            <i class="fas fa-lightbulb"></i> Solution
-                                        </span>
-                                        <p>Built an intelligent tourist navigation app that optimizes travel routes and provides real-time crowd information.</p>
-                                    </div>
-                                </div>
-                                
-                                <div class="features-grid">
-                                    <div class="feature-item">
-                                        <i class="fas fa-route"></i>
-                                        <span>Smart Route Optimization</span>
-                                    </div>
-                                    <div class="feature-item">
-                                        <i class="fas fa-users"></i>
-                                        <span>Real-time Crowd Density</span>
-                                    </div>
-                                    <div class="feature-item">
-                                        <i class="fas fa-map-signs"></i>
-                                        <span>Alternative Suggestions</span>
-                                    </div>
-                                    <div class="feature-item">
-                                        <i class="fas fa-clock"></i>
-                                        <span>Time-based Planning</span>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="timeline-tech">
-                                <span class="tech-tag">Mobile App</span>
-                                <span class="tech-tag">Maps API</span>
-                                <span class="tech-tag">Real-time Data</span>
-                                <span class="tech-tag">Crowd Analytics</span>
-                            </div>
+                        <div class="skill-card-premium">
+                            <div class="skill-top"><i class="devicon-dart-plain colored"></i><span class="skill-level">Expert</span></div>
+                            <h4>Dart</h4><p>Flutter development & mobile apps</p>
+                            <div class="skill-progress-bar"><div class="skill-progress-fill" data-progress="90"></div></div>
+                            <span class="skill-percent">90%</span>
+                            <div class="skill-meta"><span><i class="fas fa-mobile"></i> Published Apps</span><span><i class="fas fa-clock"></i> 1.5+ Years</span></div>
+                        </div>
+                        <div class="skill-card-premium">
+                            <div class="skill-top"><i class="devicon-javascript-plain colored"></i><span class="skill-level">Advanced</span></div>
+                            <h4>JavaScript</h4><p>Modern ES6+ for web development</p>
+                            <div class="skill-progress-bar"><div class="skill-progress-fill" data-progress="85"></div></div>
+                            <span class="skill-percent">85%</span>
+                            <div class="skill-meta"><span><i class="fas fa-globe"></i> Multiple Projects</span><span><i class="fas fa-clock"></i> 2+ Years</span></div>
+                        </div>
+                        <div class="skill-card-premium">
+                            <div class="skill-top"><i class="devicon-python-plain colored"></i><span class="skill-level">Intermediate</span></div>
+                            <h4>Python</h4><p>FastAPI, scripting & AI integrations</p>
+                            <div class="skill-progress-bar"><div class="skill-progress-fill" data-progress="80"></div></div>
+                            <span class="skill-percent">80%</span>
+                            <div class="skill-meta"><span><i class="fas fa-robot"></i> AI Projects</span><span><i class="fas fa-clock"></i> 1+ Year</span></div>
+                        </div>
+                        <div class="skill-card-premium">
+                            <div class="skill-top"><i class="devicon-cplusplus-plain colored"></i><span class="skill-level">Intermediate</span></div>
+                            <h4>C/C++</h4><p>Core programming & competitive coding</p>
+                            <div class="skill-progress-bar"><div class="skill-progress-fill" data-progress="78"></div></div>
+                            <span class="skill-percent">78%</span>
+                            <div class="skill-meta"><span><i class="fas fa-microchip"></i> Core Logic</span><span><i class="fas fa-clock"></i> 2+ Years</span></div>
+                        </div>
+                        <div class="skill-card-premium">
+                            <div class="skill-top"><i class="devicon-html5-plain colored"></i><span class="skill-level">Expert</span></div>
+                            <h4>HTML5 & CSS3</h4><p>Modern responsive layouts</p>
+                            <div class="skill-progress-bar"><div class="skill-progress-fill" data-progress="95"></div></div>
+                            <span class="skill-percent">95%</span>
+                            <div class="skill-meta"><span><i class="fas fa-palette"></i> All Projects</span><span><i class="fas fa-clock"></i> 3+ Years</span></div>
                         </div>
                     </div>
-                    
-                    <!-- Hackathon 2 -->
-                    <div class="timeline-item">
-                        <div class="timeline-marker">
-                            <i class="fas fa-trophy"></i>
+                </div>
+
+                <div class="skill-section-block" data-aos="fade-up">
+                    <div class="skill-block-header"><div class="block-icon"><i class="fas fa-layer-group"></i></div><div><h3>Frameworks & Libraries</h3><p>Powerful tools for rapid development</p></div></div>
+                    <div class="skills-cards-grid">
+                        <div class="skill-card-premium highlight">
+                            <div class="skill-top"><i class="devicon-flutter-plain colored"></i><span class="skill-level">Expert</span></div>
+                            <h4>Flutter</h4><p>Cross-platform mobile development</p>
+                            <div class="skill-progress-bar"><div class="skill-progress-fill" data-progress="92"></div></div>
+                            <span class="skill-percent">92%</span>
                         </div>
-                        <div class="timeline-card">
-                            <div class="timeline-header">
-                                <div class="timeline-badge">Hackathon</div>
-                                <span class="timeline-date">
-                                    <i class="fas fa-calendar-alt"></i> 2025
-                                </span>
-                            </div>
-                            <h3 class="timeline-title">
-                                <i class="fas fa-wallet"></i>
-                                FinTech - Personal Finance Tracker
-                            </h3>
-                            <h4 class="timeline-venue">
-                                <i class="fas fa-university"></i>
-                                Shankara Global University Hackathon
-                            </h4>
-                            
-                            <div class="timeline-content">
-                                <div class="problem-solution">
-                                    <div class="ps-item">
-                                        <span class="ps-label">
-                                            <i class="fas fa-exclamation-triangle"></i> Problem
-                                        </span>
-                                        <p>People struggle to track expenses, manage savings, and make informed financial decisions without proper tools.</p>
-                                    </div>
-                                    <div class="ps-item">
-                                        <span class="ps-label">
-                                            <i class="fas fa-lightbulb"></i> Solution
-                                        </span>
-                                        <p>Developed a comprehensive fintech web application with AI-powered financial guidance and smart tracking.</p>
-                                    </div>
+                        <div class="skill-card-premium highlight">
+                            <div class="skill-top"><i class="devicon-react-original colored"></i><span class="skill-level">Advanced</span></div>
+                            <h4>React.js</h4><p>Modern component-based UI</p>
+                            <div class="skill-progress-bar"><div class="skill-progress-fill" data-progress="86"></div></div>
+                            <span class="skill-percent">86%</span>
+                        </div>
+                        <div class="skill-card-premium">
+                            <div class="skill-top"><i class="devicon-nodejs-plain colored"></i><span class="skill-level">Advanced</span></div>
+                            <h4>Node.js</h4><p>Server-side JavaScript runtime</p>
+                            <div class="skill-progress-bar"><div class="skill-progress-fill" data-progress="84"></div></div>
+                            <span class="skill-percent">84%</span>
+                        </div>
+                        <div class="skill-card-premium">
+                            <div class="skill-top"><i class="devicon-express-original"></i><span class="skill-level">Advanced</span></div>
+                            <h4>Express.js</h4><p>Fast backend web framework</p>
+                            <div class="skill-progress-bar"><div class="skill-progress-fill" data-progress="82"></div></div>
+                            <span class="skill-percent">82%</span>
+                        </div>
+                        <div class="skill-card-premium">
+                            <div class="skill-top"><i class="devicon-tailwindcss-plain colored"></i><span class="skill-level">Advanced</span></div>
+                            <h4>Tailwind CSS</h4><p>Utility-first modern styling</p>
+                            <div class="skill-progress-bar"><div class="skill-progress-fill" data-progress="88"></div></div>
+                            <span class="skill-percent">88%</span>
+                        </div>
+                        <div class="skill-card-premium">
+                            <div class="skill-top"><i class="devicon-fastapi-plain colored"></i><span class="skill-level">Intermediate</span></div>
+                            <h4>FastAPI</h4><p>High-performance Python APIs</p>
+                            <div class="skill-progress-bar"><div class="skill-progress-fill" data-progress="75"></div></div>
+                            <span class="skill-percent">75%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-section-block" data-aos="fade-up">
+                    <div class="skill-block-header"><div class="block-icon"><i class="fas fa-database"></i></div><div><h3>Databases & Cloud</h3><p>Storage and deployment solutions</p></div></div>
+                    <div class="skills-cards-grid">
+                        <div class="skill-card-premium highlight">
+                            <div class="skill-top"><i class="devicon-firebase-plain colored"></i><span class="skill-level">Expert</span></div>
+                            <h4>Firebase</h4><p>Auth, Firestore, Hosting, Storage</p>
+                            <div class="skill-progress-bar"><div class="skill-progress-fill" data-progress="90"></div></div>
+                            <span class="skill-percent">90%</span>
+                        </div>
+                        <div class="skill-card-premium highlight">
+                            <div class="skill-top"><i class="devicon-mongodb-plain colored"></i><span class="skill-level">Advanced</span></div>
+                            <h4>MongoDB</h4><p>NoSQL database with Mongoose ODM</p>
+                            <div class="skill-progress-bar"><div class="skill-progress-fill" data-progress="85"></div></div>
+                            <span class="skill-percent">85%</span>
+                        </div>
+                        <div class="skill-card-premium">
+                            <div class="skill-top"><i class="devicon-mysql-plain colored"></i><span class="skill-level">Intermediate</span></div>
+                            <h4>MySQL</h4><p>Relational database management</p>
+                            <div class="skill-progress-bar"><div class="skill-progress-fill" data-progress="75"></div></div>
+                            <span class="skill-percent">75%</span>
+                        </div>
+                        <div class="skill-card-premium">
+                            <div class="skill-top"><i class="devicon-vercel-original"></i><span class="skill-level">Advanced</span></div>
+                            <h4>Vercel</h4><p>Production deployment & hosting</p>
+                            <div class="skill-progress-bar"><div class="skill-progress-fill" data-progress="85"></div></div>
+                            <span class="skill-percent">85%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-section-block" data-aos="fade-up">
+                    <div class="skill-block-header"><div class="block-icon"><i class="fas fa-tools"></i></div><div><h3>Tools & Platforms</h3><p>Development ecosystem</p></div></div>
+                    <div class="tools-mega-grid">
+                        <div class="tool-chip"><i class="devicon-git-plain colored"></i><span>Git</span></div>
+                        <div class="tool-chip"><i class="devicon-github-original"></i><span>GitHub</span></div>
+                        <div class="tool-chip"><i class="devicon-vscode-plain colored"></i><span>VS Code</span></div>
+                        <div class="tool-chip"><i class="devicon-androidstudio-plain colored"></i><span>Android Studio</span></div>
+                        <div class="tool-chip"><i class="devicon-figma-plain colored"></i><span>Figma</span></div>
+                        <div class="tool-chip"><i class="devicon-postman-plain colored"></i><span>Postman</span></div>
+                        <div class="tool-chip"><i class="devicon-linux-plain colored"></i><span>Linux</span></div>
+                        <div class="tool-chip"><i class="devicon-vercel-original"></i><span>Vercel</span></div>
+                        <div class="tool-chip"><i class="fas fa-leaf" style="color:#13aa52;"></i><span>MongoDB Atlas</span></div>
+                        <div class="tool-chip"><i class="fab fa-google"></i><span>Gemini AI</span></div>
+                        <div class="tool-chip"><i class="fas fa-code-branch"></i><span>REST APIs</span></div>
+                        <div class="tool-chip"><i class="fab fa-google-play"></i><span>Play Console</span></div>
+                    </div>
+                </div>
+
+                <div class="skill-section-block" data-aos="fade-up">
+                    <div class="skill-block-header"><div class="block-icon"><i class="fas fa-brain"></i></div><div><h3>Computer Science Fundamentals</h3><p>Core concepts for GATE 2026 preparation</p></div></div>
+                    <div class="fundamentals-grid">
+                        <div class="fundamental-card"><div class="fund-icon"><i class="fas fa-sitemap"></i></div><h4>Data Structures</h4><p>Arrays, LinkedList, Trees, Graphs, Heaps</p><span class="fund-level">Advanced</span></div>
+                        <div class="fundamental-card"><div class="fund-icon"><i class="fas fa-cogs"></i></div><h4>Algorithms</h4><p>Sorting, Searching, DP, Greedy, Backtracking</p><span class="fund-level">Advanced</span></div>
+                        <div class="fundamental-card"><div class="fund-icon"><i class="fas fa-database"></i></div><h4>DBMS</h4><p>SQL, Normalization, Transactions, Indexing</p><span class="fund-level">Intermediate</span></div>
+                        <div class="fundamental-card"><div class="fund-icon"><i class="fas fa-microchip"></i></div><h4>Operating Systems</h4><p>Processes, Threads, Memory, Scheduling</p><span class="fund-level">Intermediate</span></div>
+                        <div class="fundamental-card"><div class="fund-icon"><i class="fas fa-network-wired"></i></div><h4>Computer Networks</h4><p>TCP/IP, HTTP, DNS, OSI Model</p><span class="fund-level">Intermediate</span></div>
+                        <div class="fundamental-card"><div class="fund-icon"><i class="fas fa-object-group"></i></div><h4>OOP Concepts</h4><p>Inheritance, Polymorphism, Encapsulation</p><span class="fund-level">Advanced</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="projects-section" id="projects">
+        <div class="section-wrapper">
+            <div class="section-header-premium" data-aos="fade-up">
+                <div class="header-tag"><span class="tag-dot"></span><span class="tag-text">PORTFOLIO</span><span class="tag-dot"></span></div>
+                <h2 class="section-title-premium">Featured <span class="gradient-text">Projects</span></h2>
+                <p class="section-subtitle-premium">Real-world applications solving genuine problems — from Play Store apps to live MERN platforms</p>
+                <div class="header-divider"><span class="divider-line"></span><i class="fas fa-rocket divider-icon"></i><span class="divider-line"></span></div>
+            </div>
+
+            <div class="project-filters" data-aos="fade-up">
+                <button class="filter-btn active" data-filter="all"><i class="fas fa-th"></i><span>All Projects</span><span class="filter-count">7</span></button>
+                <button class="filter-btn" data-filter="mobile"><i class="fas fa-mobile-alt"></i><span>Mobile Apps</span><span class="filter-count">3</span></button>
+                <button class="filter-btn" data-filter="web"><i class="fas fa-globe"></i><span>Web Apps</span><span class="filter-count">5</span></button>
+                <button class="filter-btn" data-filter="fullstack"><i class="fas fa-layer-group"></i><span>Full Stack</span><span class="filter-count">2</span></button>
+                <button class="filter-btn" data-filter="ai"><i class="fas fa-robot"></i><span>AI Projects</span><span class="filter-count">2</span></button>
+                <button class="filter-btn" data-filter="live"><i class="fas fa-circle"></i><span>Live</span><span class="filter-count">4</span></button>
+            </div>
+
+            <div class="projects-mega-grid">
+                <!-- Project 1: RentiGo -->
+                <div class="project-mega-card featured" data-category="web live fullstack" data-aos="fade-up">
+                    <div class="project-image-side">
+                        <div class="project-image-wrapper mern-gradient">
+                            <div class="project-placeholder-img"><i class="fas fa-car"></i></div>
+                            <div class="project-image-overlay">
+                                <div class="overlay-actions">
+                                    <a href="https://renti-go-pi.vercel.app/" target="_blank" class="overlay-action-btn"><i class="fas fa-external-link-alt"></i></a>
+                                    <a href="https://github.com/prajapatvishnu7976-sys/RentiGo" target="_blank" class="overlay-action-btn"><i class="fab fa-github"></i></a>
                                 </div>
-                                
-                                <div class="features-grid">
-                                    <div class="feature-item">
-                                        <i class="fas fa-chart-line"></i>
-                                        <span>Income & Expense Tracking</span>
-                                    </div>
-                                    <div class="feature-item">
-                                        <i class="fas fa-piggy-bank"></i>
-                                        <span>Savings Management</span>
-                                    </div>
-                                    <div class="feature-item">
-                                        <i class="fas fa-robot"></i>
-                                        <span>AI Financial Chatbot</span>
-                                    </div>
-                                    <div class="feature-item">
-                                        <i class="fas fa-chart-pie"></i>
-                                        <span>Visual Analytics</span>
-                                    </div>
-                                </div>
-                                
-                                <div class="special-feature">
-                                    <i class="fas fa-star"></i>
-                                    <span><strong>AI Chatbot:</strong> Context-aware assistant that only answers finance-related queries specific to the user's data</span>
+                            </div>
+                        </div>
+                        <div class="project-badges">
+                            <span class="proj-badge featured-badge"><i class="fas fa-star"></i> MERN Stack</span>
+                            <span class="proj-badge live-badge"><i class="fas fa-circle"></i> Live</span>
+                        </div>
+                    </div>
+                    <div class="project-content-side">
+                        <div class="project-type">Full Stack Web App · Rental Platform</div>
+                        <h3 class="project-mega-title">RentiGo</h3>
+                        <p class="project-mega-tagline">Premium vehicle rental platform serving 500+ cities in India</p>
+                        <p class="project-mega-description">A complete MERN-based vehicle rental management system with 3 role-based dashboards (Customer / Owner / Admin), real-time 7-step booking tracking, multiple payment gateways, and automated PDF invoicing with GST. Built during my Unified Mentor internship and deployed live on Vercel.</p>
+                        <div class="project-key-features">
+                            <h4><i class="fas fa-star"></i> Key Features</h4>
+                            <div class="features-list">
+                                <div class="feature-pill"><i class="fas fa-users"></i> 3 User Roles</div>
+                                <div class="feature-pill"><i class="fas fa-credit-card"></i> Multi Payment</div>
+                                <div class="feature-pill"><i class="fas fa-route"></i> Live Tracking</div>
+                                <div class="feature-pill"><i class="fas fa-file-pdf"></i> PDF Invoice</div>
+                                <div class="feature-pill"><i class="fas fa-lock"></i> JWT Auth</div>
+                            </div>
+                        </div>
+                        <div class="project-tech-stack">
+                            <h4><i class="fas fa-code"></i> Tech Stack</h4>
+                            <div class="tech-icons-list">
+                                <span class="tech-item"><i class="devicon-react-original colored"></i> React 19</span>
+                                <span class="tech-item"><i class="devicon-nodejs-plain colored"></i> Node.js</span>
+                                <span class="tech-item"><i class="devicon-express-original"></i> Express</span>
+                                <span class="tech-item"><i class="devicon-mongodb-plain colored"></i> MongoDB</span>
+                                <span class="tech-item"><i class="devicon-tailwindcss-plain colored"></i> Tailwind</span>
+                            </div>
+                        </div>
+                        <div class="project-actions-mega">
+                            <a href="https://renti-go-pi.vercel.app/" target="_blank" class="action-btn primary"><i class="fas fa-external-link-alt"></i><span>Live Demo</span></a>
+                            <a href="https://github.com/prajapatvishnu7976-sys/RentiGo" target="_blank" class="action-btn secondary"><i class="fab fa-github"></i><span>Source Code</span></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: EntreSkillHub -->
+                <div class="project-mega-card featured" data-category="web live fullstack" data-aos="fade-up">
+                    <div class="project-image-side">
+                        <div class="project-image-wrapper startup-gradient">
+                            <div class="project-placeholder-img"><i class="fas fa-lightbulb"></i></div>
+                            <div class="project-image-overlay">
+                                <div class="overlay-actions">
+                                    <a href="https://entreskillhub.vercel.app/" target="_blank" class="overlay-action-btn"><i class="fas fa-external-link-alt"></i></a>
+                                    <a href="https://github.com/prajapatvishnu7976-sys/entreskillhub" target="_blank" class="overlay-action-btn"><i class="fab fa-github"></i></a>
                                 </div>
                             </div>
-                            
-                            <div class="timeline-tech">
-                                <span class="tech-tag">React</span>
-                                <span class="tech-tag">Node.js</span>
-                                <span class="tech-tag">AI Integration</span>
-                                <span class="tech-tag">Data Analytics</span>
+                        </div>
+                        <div class="project-badges">
+                            <span class="proj-badge featured-badge"><i class="fas fa-star"></i> MERN Stack</span>
+                            <span class="proj-badge live-badge"><i class="fas fa-circle"></i> Live</span>
+                        </div>
+                    </div>
+                    <div class="project-content-side">
+                        <div class="project-type">Full Stack Web App · EdTech Platform</div>
+                        <h3 class="project-mega-title">EntreSkillHub</h3>
+                        <p class="project-mega-tagline">Skill-to-Startup enablement platform for aspiring entrepreneurs</p>
+                        <p class="project-mega-description">A comprehensive MERN platform helping users transform their skills into sustainable micro-businesses. Features a smart skill-matching engine, verified mentor booking system, step-by-step business roadmaps, learning resources, and gamified progress tracking with streaks. Includes 13 controllers, 10 models & a full admin panel.</p>
+                        <div class="project-key-features">
+                            <h4><i class="fas fa-star"></i> Key Features</h4>
+                            <div class="features-list">
+                                <div class="feature-pill"><i class="fas fa-brain"></i> Skill Matching</div>
+                                <div class="feature-pill"><i class="fas fa-chalkboard-teacher"></i> Mentorship</div>
+                                <div class="feature-pill"><i class="fas fa-route"></i> Roadmaps</div>
+                                <div class="feature-pill"><i class="fas fa-fire"></i> Gamification</div>
+                                <div class="feature-pill"><i class="fas fa-shield-halved"></i> Admin Panel</div>
                             </div>
+                        </div>
+                        <div class="project-tech-stack">
+                            <h4><i class="fas fa-code"></i> Tech Stack</h4>
+                            <div class="tech-icons-list">
+                                <span class="tech-item"><i class="devicon-react-original colored"></i> React 18</span>
+                                <span class="tech-item"><i class="devicon-nodejs-plain colored"></i> Node.js</span>
+                                <span class="tech-item"><i class="devicon-express-original"></i> Express</span>
+                                <span class="tech-item"><i class="devicon-mongodb-plain colored"></i> MongoDB</span>
+                                <span class="tech-item"><i class="devicon-tailwindcss-plain colored"></i> Tailwind</span>
+                            </div>
+                        </div>
+                        <div class="project-actions-mega">
+                            <a href="https://entreskillhub.vercel.app/" target="_blank" class="action-btn primary"><i class="fas fa-external-link-alt"></i><span>Live Demo</span></a>
+                            <a href="https://github.com/prajapatvishnu7976-sys/entreskillhub" target="_blank" class="action-btn secondary"><i class="fab fa-github"></i><span>Source Code</span></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: Smart Attendance -->
+                <div class="project-mega-card" data-category="mobile web live" data-aos="fade-up">
+                    <div class="project-image-side">
+                        <div class="project-image-wrapper">
+                            <div class="project-placeholder-img"><i class="fas fa-user-check"></i></div>
+                            <div class="project-image-overlay">
+                                <div class="overlay-actions">
+                                    <a href="https://smartattendanceapp-13515.web.app/" target="_blank" class="overlay-action-btn"><i class="fas fa-external-link-alt"></i></a>
+                                    <a href="https://github.com/prajapatvishnu7976-sys" target="_blank" class="overlay-action-btn"><i class="fab fa-github"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-badges"><span class="proj-badge featured-badge"><i class="fas fa-star"></i> Flagship Project</span><span class="proj-badge live-badge"><i class="fas fa-circle"></i> Live</span></div>
+                    </div>
+                    <div class="project-content-side">
+                        <div class="project-type">Enterprise SaaS Platform</div>
+                        <h3 class="project-mega-title">Smart Attendance System</h3>
+                        <p class="project-mega-tagline">Multi-role attendance management platform for educational institutions</p>
+                        <p class="project-mega-description">A comprehensive attendance management system with 4 user roles, OCR scanning, QR code check-ins, and real-time eligibility monitoring. Successfully deployed on Firebase Hosting.</p>
+                        <div class="project-key-features">
+                            <h4><i class="fas fa-star"></i> Key Features</h4>
+                            <div class="features-list">
+                                <div class="feature-pill"><i class="fas fa-users"></i> 4 User Roles</div>
+                                <div class="feature-pill"><i class="fas fa-camera"></i> OCR Scanning</div>
+                                <div class="feature-pill"><i class="fas fa-qrcode"></i> QR Code</div>
+                                <div class="feature-pill"><i class="fas fa-chart-line"></i> Real-time Analytics</div>
+                            </div>
+                        </div>
+                        <div class="project-tech-stack">
+                            <h4><i class="fas fa-code"></i> Tech Stack</h4>
+                            <div class="tech-icons-list">
+                                <span class="tech-item"><i class="devicon-flutter-plain colored"></i> Flutter</span>
+                                <span class="tech-item"><i class="devicon-firebase-plain colored"></i> Firebase</span>
+                                <span class="tech-item"><i class="devicon-dart-plain colored"></i> Dart</span>
+                            </div>
+                        </div>
+                        <div class="project-actions-mega">
+                            <a href="https://smartattendanceapp-13515.web.app/" target="_blank" class="action-btn primary"><i class="fas fa-external-link-alt"></i><span>Live Demo</span></a>
+                            <a href="https://github.com/prajapatvishnu7976-sys" target="_blank" class="action-btn secondary"><i class="fab fa-github"></i><span>Source Code</span></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4: Code Logic -->
+                <div class="project-mega-card" data-category="mobile live" data-aos="fade-up">
+                    <div class="project-image-side">
+                        <div class="project-image-wrapper purple-gradient">
+                            <div class="project-placeholder-img"><i class="fas fa-code"></i></div>
+                            <div class="project-image-overlay">
+                                <div class="overlay-actions">
+                                    <a href="https://play.google.com/store/apps/details?id=com.vishnu.codelogic" target="_blank" class="overlay-action-btn"><i class="fab fa-google-play"></i></a>
+                                    <a href="https://github.com/prajapatvishnu7976-sys" target="_blank" class="overlay-action-btn"><i class="fab fa-github"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-badges"><span class="proj-badge playstore-badge"><i class="fab fa-google-play"></i> Play Store Live</span></div>
+                    </div>
+                    <div class="project-content-side">
+                        <div class="project-type">Mobile App · Education</div>
+                        <h3 class="project-mega-title">Code Logic</h3>
+                        <p class="project-mega-tagline">Complete DSA learning platform for coding interview prep</p>
+                        <p class="project-mega-description">An all-in-one DSA learning app published on Google Play Store. Features structured roadmaps, mock tests, daily challenges with leaderboards, and curated video content.</p>
+                        <div class="project-key-features">
+                            <div class="features-list">
+                                <div class="feature-pill"><i class="fas fa-route"></i> DSA Roadmap</div>
+                                <div class="feature-pill"><i class="fas fa-tasks"></i> Mock Tests</div>
+                                <div class="feature-pill"><i class="fas fa-trophy"></i> Leaderboard</div>
+                            </div>
+                        </div>
+                        <div class="project-tech-stack">
+                            <div class="tech-icons-list"><span class="tech-item"><i class="devicon-flutter-plain colored"></i> Flutter</span><span class="tech-item"><i class="devicon-firebase-plain colored"></i> Firebase</span></div>
+                        </div>
+                        <div class="project-actions-mega">
+                            <a href="https://play.google.com/store/apps/details?id=com.vishnu.codelogic" target="_blank" class="action-btn primary"><i class="fab fa-google-play"></i><span>Play Store</span></a>
+                            <a href="https://github.com/prajapatvishnu7976-sys" target="_blank" class="action-btn secondary"><i class="fab fa-github"></i><span>GitHub</span></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5: AI Utility Assistant -->
+                <div class="project-mega-card" data-category="web ai" data-aos="fade-up">
+                    <div class="project-image-side">
+                        <div class="project-image-wrapper ai-gradient">
+                            <div class="project-placeholder-img"><i class="fas fa-robot"></i></div>
+                        </div>
+                        <div class="project-badges"><span class="proj-badge winner-badge"><i class="fas fa-medal"></i> 2nd Rank Winner</span></div>
+                    </div>
+                    <div class="project-content-side">
+                        <div class="project-type">AI/ML Project · Hackathon</div>
+                        <h3 class="project-mega-title">AI-Based Utility Assistant</h3>
+                        <p class="project-mega-tagline">Smart AI assistant with Weather & GitHub integration</p>
+                        <p class="project-mega-description">Intelligent multi-utility assistant integrating Weather API, GitHub REST APIs, and Gemini LLM backend with smart repository recommendations. Won 2nd position in CodeWars Hackathon.</p>
+                        <div class="project-key-features">
+                            <div class="features-list">
+                                <div class="feature-pill"><i class="fas fa-cloud-sun"></i> Weather API</div>
+                                <div class="feature-pill"><i class="fab fa-github"></i> GitHub API</div>
+                                <div class="feature-pill"><i class="fas fa-brain"></i> Gemini AI</div>
+                            </div>
+                        </div>
+                        <div class="project-tech-stack">
+                            <div class="tech-icons-list"><span class="tech-item"><i class="devicon-python-plain colored"></i> Python</span><span class="tech-item"><i class="devicon-fastapi-plain colored"></i> FastAPI</span></div>
+                        </div>
+                        <div class="project-actions-mega">
+                            <a href="https://github.com/prajapatvishnu7976-sys" target="_blank" class="action-btn secondary"><i class="fab fa-github"></i><span>Source Code</span></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6: Finsarthi -->
+                <div class="project-mega-card" data-category="web ai" data-aos="fade-up">
+                    <div class="project-image-side">
+                        <div class="project-image-wrapper finance-gradient">
+                            <div class="project-placeholder-img"><i class="fas fa-wallet"></i></div>
+                        </div>
+                        <div class="project-badges"><span class="proj-badge hackathon-badge"><i class="fas fa-flag"></i> Hackathon Project</span></div>
+                    </div>
+                    <div class="project-content-side">
+                        <div class="project-type">Web App · FinTech</div>
+                        <h3 class="project-mega-title">Finsarthi</h3>
+                        <p class="project-mega-tagline">AI-powered personal finance assistant & tracker</p>
+                        <p class="project-mega-description">Fintech web application with AI-powered financial guidance, expense tracking, goal-based savings, and an intelligent chatbot for finance queries.</p>
+                        <div class="project-key-features">
+                            <div class="features-list">
+                                <div class="feature-pill"><i class="fas fa-chart-line"></i> Expense Track</div>
+                                <div class="feature-pill"><i class="fas fa-piggy-bank"></i> Savings Goals</div>
+                                <div class="feature-pill"><i class="fas fa-robot"></i> AI Chatbot</div>
+                            </div>
+                        </div>
+                        <div class="project-tech-stack">
+                            <div class="tech-icons-list"><span class="tech-item"><i class="devicon-javascript-plain colored"></i> JavaScript</span><span class="tech-item"><i class="devicon-html5-plain colored"></i> HTML5</span></div>
+                        </div>
+                        <div class="project-actions-mega">
+                            <a href="https://github.com/prajapatvishnu7976-sys" target="_blank" class="action-btn secondary"><i class="fab fa-github"></i><span>GitHub</span></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 7: Smart Tourism -->
+                <div class="project-mega-card" data-category="mobile" data-aos="fade-up">
+                    <div class="project-image-side">
+                        <div class="project-image-wrapper travel-gradient">
+                            <div class="project-placeholder-img"><i class="fas fa-map-marked-alt"></i></div>
+                        </div>
+                        <div class="project-badges"><span class="proj-badge finalist-badge"><i class="fas fa-award"></i> Grand Finalist</span></div>
+                    </div>
+                    <div class="project-content-side">
+                        <div class="project-type">Mobile App · Travel</div>
+                        <h3 class="project-mega-title">Smart Tourism App</h3>
+                        <p class="project-mega-tagline">Intelligent travel app with crowd density analysis</p>
+                        <p class="project-mega-description">Built during 24-hour SGVU Jaipur Hackathon. Provides smart location recommendations, real-time crowd density analysis, and optimal route planning for tourists.</p>
+                        <div class="project-key-features">
+                            <div class="features-list">
+                                <div class="feature-pill"><i class="fas fa-route"></i> Route Opt</div>
+                                <div class="feature-pill"><i class="fas fa-users"></i> Crowd Analysis</div>
+                            </div>
+                        </div>
+                        <div class="project-tech-stack">
+                            <div class="tech-icons-list"><span class="tech-item"><i class="devicon-flutter-plain colored"></i> Flutter</span><span class="tech-item"><i class="fas fa-map"></i> Maps API</span></div>
+                        </div>
+                        <div class="project-actions-mega">
+                            <a href="https://github.com/prajapatvishnu7976-sys" target="_blank" class="action-btn secondary"><i class="fab fa-github"></i><span>GitHub</span></a>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
 
-        <!-- ========== SKILLS SECTION ========== -->
-        <section class="skills" id="skills">
-            <div class="section-container">
-                <div class="section-header">
-                    <span class="section-tag"><i class="fas fa-code"></i> Expertise</span>
-                    <h2 class="section-title">Skills & Technologies</h2>
-                    <p class="section-subtitle">My technical arsenal for building amazing digital products</p>
+            <div class="github-cta-section" data-aos="zoom-in">
+                <div class="github-cta-content"><div class="github-icon-big"><i class="fab fa-github"></i></div><div><h3>Explore More on GitHub</h3><p>Check out my repositories, contributions, and open source work</p></div></div>
+                <a href="https://github.com/prajapatvishnu7976-sys" target="_blank" class="github-cta-btn"><span>Visit GitHub Profile</span><i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ACHIEVEMENTS -->
+    <section class="achievements-section" id="achievements">
+        <div class="section-wrapper">
+            <div class="section-header-premium" data-aos="fade-up">
+                <div class="header-tag"><span class="tag-dot"></span><span class="tag-text">RECOGNITION</span><span class="tag-dot"></span></div>
+                <h2 class="section-title-premium">Achievements & <span class="gradient-text">Milestones</span></h2>
+                <p class="section-subtitle-premium">Proof of excellence in academics, coding, and real-world execution</p>
+                <div class="header-divider"><span class="divider-line"></span><i class="fas fa-trophy divider-icon"></i><span class="divider-line"></span></div>
+            </div>
+
+            <div class="achievements-wall">
+                <div class="ach-regular-card gold-border" data-aos="fade-up">
+                    <div class="ach-icon-top gold"><i class="fas fa-medal"></i></div>
+                    <h3>2nd Rank Winner</h3>
+                    <p>CodeWars College Hackathon — Built AI-powered utility assistant with Gemini API in a 24-hour challenge, securing 2nd position among 50+ teams.</p>
+                    <div class="ach-footer"><span class="ach-year">2025</span><span class="ach-tag hackathon">Hackathon</span></div>
                 </div>
-                
-                <div class="skills-content">
-                    <!-- Frontend -->
-                    <div class="skill-category">
-                        <div class="category-header">
-                            <div class="category-icon">
-                                <i class="fas fa-palette"></i>
-                            </div>
-                            <h3>Frontend Development</h3>
-                        </div>
-                        <div class="skills-grid">
-                            <div class="skill-card">
-                                <div class="skill-icon html-icon">
-                                    <i class="fab fa-html5"></i>
-                                </div>
-                                <h4>HTML5</h4>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-progress="95"></div>
-                                </div>
-                            </div>
-                            <div class="skill-card">
-                                <div class="skill-icon css-icon">
-                                    <i class="fab fa-css3-alt"></i>
-                                </div>
-                                <h4>CSS3</h4>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-progress="90"></div>
-                                </div>
-                            </div>
-                            <div class="skill-card">
-                                <div class="skill-icon js-icon">
-                                    <i class="fab fa-js-square"></i>
-                                </div>
-                                <h4>JavaScript</h4>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-progress="88"></div>
-                                </div>
-                            </div>
-                            <div class="skill-card">
-                                <div class="skill-icon react-icon">
-                                    <i class="fab fa-react"></i>
-                                </div>
-                                <h4>React</h4>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-progress="85"></div>
-                                </div>
-                            </div>
-                        </div>
+
+                <div class="ach-regular-card" data-aos="fade-up">
+                    <div class="ach-icon-top blue"><i class="fas fa-graduation-cap"></i></div>
+                    <h3>8.57 CGPA</h3>
+                    <p>Maintaining excellent academic performance at Government Engineering College, Ajmer in Computer Science Engineering.</p>
+                    <div class="ach-footer"><span class="ach-year">2024-25</span><span class="ach-tag academic">Academic</span></div>
+                </div>
+
+                <div class="ach-regular-card" data-aos="fade-up">
+                    <div class="ach-icon-top purple"><i class="fas fa-code"></i></div>
+                    <h3>80+ LeetCode</h3>
+                    <p>Actively solving Data Structures & Algorithms problems in Java on LeetCode with consistent daily practice.</p>
+                    <div class="ach-footer"><span class="ach-year">Ongoing</span><span class="ach-tag coding">Coding</span></div>
+                </div>
+
+                <div class="ach-regular-card" data-aos="fade-up">
+                    <div class="ach-icon-top green"><i class="fas fa-layer-group"></i></div>
+                    <h3>2 Live MERN Apps</h3>
+                    <p>Built and deployed RentiGo & EntreSkillHub — two production-grade full-stack platforms live on Vercel during my internship.</p>
+                    <div class="ach-footer"><span class="ach-year">2025</span><span class="ach-tag product">Product</span></div>
+                </div>
+
+                <div class="ach-regular-card" data-aos="fade-up">
+                    <div class="ach-icon-top green"><i class="fas fa-handshake"></i></div>
+                    <h3>Freelance Success</h3>
+                    <p>Generated significant revenue through freelance development work during college, with 100% client satisfaction.</p>
+                    <div class="ach-footer"><span class="ach-year">2024-25</span><span class="ach-tag business">Business</span></div>
+                </div>
+
+                <div class="ach-regular-card" data-aos="fade-up">
+                    <div class="ach-icon-top orange"><i class="fas fa-award"></i></div>
+                    <h3>SGVU Grand Finalist</h3>
+                    <p>Grand Finalist at Suresh Gyan Vihar University's 24-Hour Hackathon with innovative Smart Tourism solution.</p>
+                    <div class="ach-footer"><span class="ach-year">2025</span><span class="ach-tag hackathon">Hackathon</span></div>
+                </div>
+
+                <div class="ach-regular-card" data-aos="fade-up">
+                    <div class="ach-icon-top pink"><i class="fab fa-google-play"></i></div>
+                    <h3>Play Store Published</h3>
+                    <p>Successfully published "Code Logic" DSA Learning App on Google Play Store, serving students worldwide.</p>
+                    <div class="ach-footer"><span class="ach-year">2024</span><span class="ach-tag product">Product</span></div>
+                </div>
+
+                <div class="ach-regular-card" data-aos="fade-up">
+                    <div class="ach-icon-top teal"><i class="fas fa-book-reader"></i></div>
+                    <h3>GATE 2026 Aspirant</h3>
+                    <p>Rigorous preparation for GATE Computer Science Examination to strengthen core CS fundamentals and theory.</p>
+                    <div class="ach-footer"><span class="ach-year">2025-26</span><span class="ach-tag exam">Exam Prep</span></div>
+                </div>
+
+                <div class="ach-regular-card" data-aos="fade-up">
+                    <div class="ach-icon-top red"><i class="fas fa-briefcase"></i></div>
+                    <h3>Paid Internship</h3>
+                    <p>Completed 3-month Software Development Internship at Unified Mentor with a performance-based stipend.</p>
+                    <div class="ach-footer"><span class="ach-year">2025</span><span class="ach-tag professional">Professional</span></div>
+                </div>
+
+                <div class="ach-regular-card" data-aos="fade-up">
+                    <div class="ach-icon-top indigo"><i class="fas fa-flag"></i></div>
+                    <h3>Shankara Global</h3>
+                    <p>Active participant at Shankara Global 24-Hour Hackathon, built Finsarthi AI finance assistant.</p>
+                    <div class="ach-footer"><span class="ach-year">2025</span><span class="ach-tag hackathon">Hackathon</span></div>
+                </div>
+            </div>
+
+            <div class="certifications-bar" data-aos="fade-up">
+                <h3 class="cert-title"><i class="fas fa-certificate"></i> Certifications</h3>
+                <div class="cert-items">
+                    <div class="cert-item"><i class="fab fa-java"></i><div><h4>Java DSA Certification</h4><p>Apna College</p></div></div>
+                    <div class="cert-item"><i class="fas fa-briefcase"></i><div><h4>Internship Completion</h4><p>Unified Mentor</p></div></div>
+                    <div class="cert-item"><i class="fas fa-trophy"></i><div><h4>CodeWars 2nd Rank</h4><p>Hackathon Certificate</p></div></div>
+                    <div class="cert-item"><i class="fas fa-award"></i><div><h4>SGVU Finalist Cert</h4><p>Grand Finalist Recognition</p></div></div>
+                    <div class="cert-item"><i class="fas fa-certificate"></i><div><h4>Shankara Global</h4><p>Participation Certificate</p></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section" id="faq">
+        <div class="section-wrapper">
+            <div class="section-header-premium" data-aos="fade-up">
+                <div class="header-tag"><span class="tag-dot"></span><span class="tag-text">GOT QUESTIONS?</span><span class="tag-dot"></span></div>
+                <h2 class="section-title-premium">Frequently Asked <span class="gradient-text">Questions</span></h2>
+                <p class="section-subtitle-premium">Everything you need to know before working with me</p>
+                <div class="header-divider"><span class="divider-line"></span><i class="fas fa-question-circle divider-icon"></i><span class="divider-line"></span></div>
+            </div>
+
+            <div class="faq-container" data-aos="fade-up">
+                <div class="faq-item active">
+                    <button class="faq-question"><span><i class="fas fa-question-circle"></i> Are you available for internships right now?</span><i class="fas fa-chevron-down faq-arrow"></i></button>
+                    <div class="faq-answer"><p><strong>Yes, absolutely!</strong> I'm actively looking for Software Development internship opportunities (remote/hybrid preferred). I can commit 25-40 hours per week while managing my academics. I'm particularly interested in Flutter, Full-Stack MERN Development, and AI integration roles.</p></div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question"><span><i class="fas fa-question-circle"></i> What are your primary tech expertise areas?</span><i class="fas fa-chevron-down faq-arrow"></i></button>
+                    <div class="faq-answer"><p>My primary expertise lies in <strong>Flutter mobile development</strong> with Firebase backend (published apps on Play Store) and <strong>Full-Stack MERN Development</strong> — I've built and deployed 2 production platforms (RentiGo & EntreSkillHub) using React, Node.js, Express, and MongoDB. I also work with AI integration using Gemini API & FastAPI, and Java DSA (80+ on LeetCode).</p></div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question"><span><i class="fas fa-question-circle"></i> Do you take freelance projects?</span><i class="fas fa-chevron-down faq-arrow"></i></button>
+                    <div class="faq-answer"><p>Yes! I actively take freelance projects and have successfully delivered multiple projects for clients with full satisfaction. I ensure quality delivery, clear communication, and post-launch support. Contact me with your project requirements.</p></div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question"><span><i class="fas fa-question-circle"></i> How quickly can you deliver a project?</span><i class="fas fa-chevron-down faq-arrow"></i></button>
+                    <div class="faq-answer">
+                        <p>Delivery time depends on project complexity:</p>
+                        <ul class="faq-list">
+                            <li><strong>Simple landing page/portfolio:</strong> 3-5 days</li>
+                            <li><strong>Basic mobile app with Firebase:</strong> 2-3 weeks</li>
+                            <li><strong>Full-stack MERN application:</strong> 3-6 weeks</li>
+                            <li><strong>Complex multi-role systems:</strong> 6-10 weeks</li>
+                        </ul>
                     </div>
-                    
-                    <!-- Backend -->
-                    <div class="skill-category">
-                        <div class="category-header">
-                            <div class="category-icon">
-                                <i class="fas fa-server"></i>
-                            </div>
-                            <h3>Backend Development</h3>
-                        </div>
-                        <div class="skills-grid">
-                            <div class="skill-card">
-                                <div class="skill-icon node-icon">
-                                    <i class="fab fa-node-js"></i>
-                                </div>
-                                <h4>Node.js</h4>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-progress="82"></div>
-                                </div>
-                            </div>
-                            <div class="skill-card">
-                                <div class="skill-icon mongo-icon">
-                                    <i class="fas fa-database"></i>
-                                </div>
-                                <h4>MongoDB</h4>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-progress="80"></div>
-                                </div>
-                            </div>
-                            <div class="skill-card">
-                                <div class="skill-icon firebase-icon">
-                                    <i class="fas fa-fire"></i>
-                                </div>
-                                <h4>Firebase</h4>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-progress="85"></div>
-                                </div>
-                            </div>
-                        </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question"><span><i class="fas fa-question-circle"></i> Can you work with existing teams/codebases?</span><i class="fas fa-chevron-down faq-arrow"></i></button>
+                    <div class="faq-answer"><p>Absolutely! I have experience collaborating in team environments during my internship at Unified Mentor. I'm comfortable with <strong>Git version control</strong>, following coding standards, writing documentation, and participating in code reviews.</p></div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question"><span><i class="fas fa-question-circle"></i> Why should I hire you over experienced developers?</span><i class="fas fa-chevron-down faq-arrow"></i></button>
+                    <div class="faq-answer">
+                        <p>Here's what sets me apart:</p>
+                        <ul class="faq-list">
+                            <li><strong>Proven track record</strong> — Published apps, 2 live MERN platforms, paid internship, freelance success</li>
+                            <li><strong>Fast learner</strong> — Rapidly adapted to new technologies for hackathons</li>
+                            <li><strong>Strong fundamentals</strong> — 8.57 CGPA, 80+ DSA problems, GATE prep</li>
+                            <li><strong>Full-stack capability</strong> — Mobile + Web + AI integration</li>
+                            <li><strong>Hunger & dedication</strong> — Young, motivated, and ready to contribute</li>
+                        </ul>
                     </div>
-                    
-                    <!-- Mobile -->
-                    <div class="skill-category">
-                        <div class="category-header">
-                            <div class="category-icon">
-                                <i class="fas fa-mobile-alt"></i>
-                            </div>
-                            <h3>Mobile Development</h3>
-                        </div>
-                        <div class="skills-grid">
-                            <div class="skill-card">
-                                <div class="skill-icon flutter-icon">
-                                    <span class="flutter-text">F</span>
-                                </div>
-                                <h4>Flutter</h4>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-progress="88"></div>
-                                </div>
-                            </div>
-                            <div class="skill-card">
-                                <div class="skill-icon android-icon">
-                                    <i class="fab fa-android"></i>
-                                </div>
-                                <h4>Android (Java)</h4>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-progress="75"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Programming Languages -->
-                    <div class="skill-category">
-                        <div class="category-header">
-                            <div class="category-icon">
-                                <i class="fas fa-terminal"></i>
-                            </div>
-                            <h3>Programming Languages</h3>
-                        </div>
-                        <div class="skills-grid">
-                            <div class="skill-card">
-                                <div class="skill-icon java-icon">
-                                    <i class="fab fa-java"></i>
-                                </div>
-                                <h4>Java</h4>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-progress="90"></div>
-                                </div>
-                            </div>
-                            <div class="skill-card">
-                                <div class="skill-icon cpp-icon">
-                                    <span class="cpp-text">C++</span>
-                                </div>
-                                <h4>C/C++</h4>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-progress="80"></div>
-                                </div>
-                            </div>
-                            <div class="skill-card">
-                                <div class="skill-icon python-icon">
-                                    <i class="fab fa-python"></i>
-                                </div>
-                                <h4>Python</h4>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-progress="75"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Tools & Others -->
-                    <div class="skill-category">
-                        <div class="category-header">
-                            <div class="category-icon">
-                                <i class="fas fa-tools"></i>
-                            </div>
-                            <h3>Tools & Others</h3>
-                        </div>
-                        <div class="tools-grid">
-                            <div class="tool-item">
-                                <i class="fab fa-git-alt"></i>
-                                <span>Git</span>
-                            </div>
-                            <div class="tool-item">
-                                <i class="fab fa-github"></i>
-                                <span>GitHub</span>
-                            </div>
-                            <div class="tool-item">
-                                <i class="fas fa-brain"></i>
-                                <span>DSA</span>
-                            </div>
-                            <div class="tool-item">
-                                <i class="fab fa-figma"></i>
-                                <span>Figma</span>
-                            </div>
-                            <div class="tool-item">
-                                <i class="fas fa-terminal"></i>
-                                <span>Linux</span>
-                            </div>
-                            <div class="tool-item">
-                                <i class="fab fa-npm"></i>
-                                <span>NPM</span>
-                            </div>
-                        </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question"><span><i class="fas fa-question-circle"></i> How can I contact you for opportunities?</span><i class="fas fa-chevron-down faq-arrow"></i></button>
+                    <div class="faq-answer">
+                        <p>The fastest ways to reach me:</p>
+                        <ul class="faq-list">
+                            <li>📧 <strong>Email:</strong> prajapatvishnu7976@gmail.com</li>
+                            <li>💼 <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/vishnu-kumar-545037327/" target="_blank">Vishnu Kumar</a></li>
+                            <li>📱 <strong>Phone:</strong> +91 7976846734 (WhatsApp available)</li>
+                            <li>💻 <strong>GitHub:</strong> <a href="https://github.com/prajapatvishnu7976-sys" target="_blank">prajapatvishnu7976-sys</a></li>
+                        </ul>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- ========== PROJECTS SECTION ========== -->
-        <section class="projects" id="projects">
-            <div class="section-container">
-                <div class="section-header">
-                    <span class="section-tag"><i class="fas fa-folder-open"></i> Portfolio</span>
-                    <h2 class="section-title">Featured Projects</h2>
-                    <p class="section-subtitle">Showcasing my best work - real applications solving real problems</p>
-                </div>
-                
-                <div class="projects-grid">
-                    
-                    <!-- Project 1: Smart Attendance - UPDATED WITH WEBAPP LINK -->
-                    <div class="project-card featured" data-category="mobile">
-                        <div class="project-image">
-                            <img src="smart-attendance.jpg" alt="Smart Attendance App" class="project-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                            <div class="project-img-placeholder" style="display: none;">
-                                <i class="fas fa-user-check"></i>
-                                <span>Smart Attendance</span>
-                            </div>
-                            <div class="project-overlay">
-                                <div class="overlay-content">
-                                    <a href="https://smartattendanceapp-13515.web.app/" target="_blank" class="overlay-btn" title="Live Web App">
-                                        <i class="fas fa-external-link-alt"></i>
-                                    </a>
-                                    <a href="https://github.com/prajapatvishnu7976-sys/smart-attendance-app" target="_blank" class="overlay-btn" title="Source Code">
-                                        <i class="fab fa-github"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="project-badge">
-                                <i class="fas fa-star"></i> Major Project
-                            </div>
-                        </div>
-                        
-                        <div class="project-content">
-                            <h3 class="project-title">
-                                <i class="fas fa-user-check"></i>
-                                Smart Attendance System
-                            </h3>
-                            <p class="project-tagline">Enterprise-Level College Attendance Management</p>
-                            
-                            <div class="project-description">
-                                <p>A comprehensive, global-scale attendance management system designed for educational institutions with multiple innovative features.</p>
-                                
-                                <div class="project-features">
-                                    <h4><i class="fas fa-list-check"></i> Key Features:</h4>
-                                    <ul>
-                                        <li><strong>3 Attendance Methods:</strong> Manual Marking, OCR Scan, QR Code</li>
-                                        <li><strong>4 User Panels:</strong> Student, Parent, Teacher, Admin</li>
-                                        <li><strong>Parent Dashboard:</strong> Real-time attendance monitoring</li>
-                                        <li><strong>Global Architecture:</strong> Multi-college support</li>
-                                        <li><strong>Reports:</strong> PDF download (Monthly/Yearly)</li>
-                                        <li><strong>Advanced:</strong> Substitute teacher, Leave approval system</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            
-                            <div class="project-tech">
-                                <span class="tech-tag"><i class="fas fa-mobile-alt"></i> Flutter</span>
-                                <span class="tech-tag"><i class="fas fa-fire"></i> Firebase</span>
-                                <span class="tech-tag"><i class="fas fa-eye"></i> OCR</span>
-                                <span class="tech-tag"><i class="fas fa-qrcode"></i> QR Code</span>
-                            </div>
-                            
-                            <div class="project-links">
-                                <a href="https://smartattendanceapp-13515.web.app/" target="_blank" class="project-link primary">
-                                    <i class="fas fa-globe"></i> View Web App
-                                </a>
-                                <a href="https://github.com/prajapatvishnu7976-sys/smart-attendance-app" target="_blank" class="project-link secondary">
-                                    <i class="fab fa-github"></i> Source Code
-                                </a>
-                            </div>
-                            <p class="project-note" style="margin-top: 10px; font-size: 0.85rem; color: #94a3b8; font-style: italic;">
-                                <i class="fab fa-google-play"></i> Play Store version coming soon!
-                            </p>
-                        </div>
-                    </div>
-                    
-                    <!-- Project 2: Code Logic -->
-                    <div class="project-card" data-category="mobile">
-                        <div class="project-image">
-                            <img src="code-logic.jpg" alt="Code Logic App" class="project-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                            <div class="project-img-placeholder" style="display: none;">
-                                <i class="fas fa-code"></i>
-                                <span>Code Logic</span>
-                            </div>
-                            <div class="project-overlay">
-                                <div class="overlay-content">
-                                    <a href="https://play.google.com/store/apps/details?id=com.vishnu.codelogic" target="_blank" class="overlay-btn" title="Live Demo">
-                                        <i class="fas fa-external-link-alt"></i>
-                                    </a>
-                                    <a href="https://github.com/prajapatvishnu7976-sys/code_logic" target="_blank" class="overlay-btn" title="Source Code">
-                                        <i class="fab fa-github"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="project-content">
-                            <h3 class="project-title">
-                                <i class="fas fa-code"></i>
-                                Code Logic
-                            </h3>
-                            <p class="project-tagline">Complete DSA Learning & Practice Platform</p>
-                            
-                            <div class="project-description">
-                                <p>An all-in-one DSA learning app designed to help students master data structures and algorithms with structured learning paths.</p>
-                                
-                                <div class="project-features">
-                                    <h4><i class="fas fa-list-check"></i> Key Features:</h4>
-                                    <ul>
-                                        <li><strong>DSA Problem Solver:</strong> Practice with solutions</li>
-                                        <li><strong>Complete Roadmap:</strong> Structured learning path</li>
-                                        <li><strong>Job Preparation:</strong> Interview questions & aptitude</li>
-                                        <li><strong>Daily Challenges:</strong> Practice with leaderboard</li>
-                                        <li><strong>Curated Resources:</strong> YouTube videos & tutorials</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            
-                            <div class="project-tech">
-                                <span class="tech-tag"><i class="fas fa-mobile-alt"></i> Flutter</span>
-                                <span class="tech-tag"><i class="fas fa-fire"></i> Firebase</span>
-                                <span class="tech-tag"><i class="fas fa-trophy"></i> Leaderboard</span>
-                            </div>
-                            
-                            <div class="project-links">
-                                <a href="https://play.google.com/store/apps/details?id=com.vishnu.codelogic" target="_blank" class="project-link primary">
-                                    <i class="fas fa-external-link-alt"></i> View App
-                                </a>
-                                <a href="https://github.com/prajapatvishnu7976-sys/code_logic" target="_blank" class="project-link secondary">
-                                    <i class="fab fa-github"></i> Source Code
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Project 3: My Yojna -->
-                    <div class="project-card" data-category="mobile">
-                        <div class="project-image">
-                            <img src="my-yojna.jpg" alt="My Yojna App" class="project-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                            <div class="project-img-placeholder" style="display: none;">
-                                <i class="fas fa-hand-holding-usd"></i>
-                                <span>My Yojna</span>
-                            </div>
-                            <div class="project-overlay">
-                                <div class="overlay-content">
-                                    <a href="https://play.google.com/store/apps/details?id=com.praja.schemesapp&hl=hi" target="_blank" class="overlay-btn" title="Play Store">
-                                        <i class="fab fa-google-play"></i>
-                                    </a>
-                                    <a href="#" class="overlay-btn" title="Source Code">
-                                        <i class="fab fa-github"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="project-badge live">
-                                <i class="fas fa-circle"></i> Live on Play Store
-                            </div>
-                        </div>
-                        
-                        <div class="project-content">
-                            <h3 class="project-title">
-                                <i class="fas fa-hand-holding-usd"></i>
-                                My Yojna
-                            </h3>
-                            <p class="project-tagline">Smart Government Scholarship Finder</p>
-                            
-                            <div class="project-description">
-                                <p>An intelligent Android app that helps students discover government scholarships they're eligible for based on their profile.</p>
-                                
-                                <div class="project-features">
-                                    <h4><i class="fas fa-list-check"></i> Key Features:</h4>
-                                    <ul>
-                                        <li><strong>Smart Filtering:</strong> Eligibility-based results</li>
-                                        <li><strong>Detailed Info:</strong> Complete scheme information</li>
-                                        <li><strong>Notifications:</strong> New opportunity alerts</li>
-                                        <li><strong>Direct Links:</strong> Easy application process</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            
-                            <div class="project-tech">
-                                <span class="tech-tag"><i class="fab fa-java"></i> Java</span>
-                                <span class="tech-tag"><i class="fab fa-android"></i> Android</span>
-                                <span class="tech-tag"><i class="fas fa-fire"></i> Firebase</span>
-                            </div>
-                            
-                            <div class="project-links">
-                                <a href="https://play.google.com/store/apps/details?id=com.praja.schemesapp&hl=hi" target="_blank" class="project-link primary">
-                                    <i class="fab fa-google-play"></i> Play Store
-                                </a>
-                                <a href="#" class="project-link secondary">
-                                    <i class="fab fa-github"></i> Source Code
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                </div>
-                
-                <div class="projects-cta">
-                    <a href="https://github.com/prajapatvishnu7976-sys" target="_blank" class="btn btn-primary">
-                        <i class="fab fa-github"></i>
-                        <span>View All Projects on GitHub</span>
-                    </a>
-                </div>
+    <!-- CONTACT -->
+    <section class="contact-section" id="contact">
+        <div class="section-wrapper">
+            <div class="section-header-premium" data-aos="fade-up">
+                <div class="header-tag"><span class="tag-dot"></span><span class="tag-text">LET'S CONNECT</span><span class="tag-dot"></span></div>
+                <h2 class="section-title-premium">Get In <span class="gradient-text">Touch</span></h2>
+                <p class="section-subtitle-premium">Open for internships, freelance projects, and interesting opportunities</p>
+                <div class="header-divider"><span class="divider-line"></span><i class="fas fa-paper-plane divider-icon"></i><span class="divider-line"></span></div>
             </div>
-        </section>
 
-        <!-- ========== CONTACT SECTION ========== -->
-        <section class="contact" id="contact">
-            <div class="section-container">
-                <div class="section-header">
-                    <span class="section-tag"><i class="fas fa-envelope"></i> Get In Touch</span>
-                    <h2 class="section-title">Let's Work Together</h2>
-                    <p class="section-subtitle">Have a project in mind? Let's discuss how I can help bring your ideas to life</p>
-                </div>
-                
-                <div class="contact-content">
-                    <div class="contact-info">
-                        <div class="info-card">
-                            <h3>Contact Information</h3>
-                            <p>Feel free to reach out through any of these channels. I typically respond within 24 hours.</p>
-                            
-                            <div class="contact-details">
-                                <div class="contact-item">
-                                    <div class="contact-icon">
-                                        <i class="fas fa-envelope"></i>
-                                    </div>
-                                    <div class="contact-text">
-                                        <h4>Email</h4>
-                                        <a href="mailto:prajapatvishnu7976@gmail.com">prajapatvishnu7976@gmail.com</a>
-                                    </div>
-                                </div>
-                                
-                                <div class="contact-item">
-                                    <div class="contact-icon">
-                                        <i class="fas fa-map-marker-alt"></i>
-                                    </div>
-                                    <div class="contact-text">
-                                        <h4>Location</h4>
-                                        <p>Ajmer, Rajasthan, India</p>
-                                    </div>
-                                </div>
-                                
-                                <div class="contact-item">
-                                    <div class="contact-icon">
-                                        <i class="fas fa-clock"></i>
-                                    </div>
-                                    <div class="contact-text">
-                                        <h4>Response Time</h4>
-                                        <p>Within 24 hours</p>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="social-links-contact">
-                                <h4>Connect With Me</h4>
-                                <div class="social-icons">
-                                    <a href="https://github.com/prajapatvishnu7976-sys" target="_blank" class="social-icon" aria-label="GitHub">
-                                        <i class="fab fa-github"></i>
-                                    </a>
-                                    <a href="https://www.linkedin.com/in/vishnu-kumar-545037327/" target="_blank" class="social-icon" aria-label="LinkedIn">
-                                        <i class="fab fa-linkedin-in"></i>
-                                    </a>
-                                    <a href="#" target="_blank" class="social-icon" aria-label="Twitter">
-                                        <i class="fab fa-twitter"></i>
-                                    </a>
-                                    <a href="https://www.instagram.com/prjpt_vishnu/" target="_blank" class="social-icon" aria-label="Instagram">
-                                        <i class="fab fa-instagram"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
+            <div class="contact-mega-grid">
+                <div class="contact-info-side" data-aos="fade-right">
+                    <div class="contact-intro-card">
+                        <h3>Let's build something amazing together!</h3>
+                        <p>I'm currently open to <strong>Software Development Internships</strong>, <strong>Freelance Projects</strong>, and <strong>Collaboration Opportunities</strong>.</p>
                     </div>
-                    
-                    <div class="contact-form-wrapper">
-                        <form class="contact-form" id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+
+                    <div class="contact-methods">
+                        <a href="mailto:prajapatvishnu7976@gmail.com" class="contact-method-card">
+                            <div class="method-icon email"><i class="fas fa-envelope"></i></div>
+                            <div class="method-content"><h4>Email Me</h4><p>prajapatvishnu7976@gmail.com</p><span class="method-tag"><i class="fas fa-reply"></i> Replies within 24hrs</span></div>
+                            <i class="fas fa-arrow-right method-arrow"></i>
+                        </a>
+                        <a href="tel:+917976846734" class="contact-method-card">
+                            <div class="method-icon phone"><i class="fas fa-phone-alt"></i></div>
+                            <div class="method-content"><h4>Call Me</h4><p>+91 7976846734</p><span class="method-tag"><i class="fab fa-whatsapp"></i> WhatsApp available</span></div>
+                            <i class="fas fa-arrow-right method-arrow"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/vishnu-kumar-545037327/" target="_blank" class="contact-method-card">
+                            <div class="method-icon linkedin"><i class="fab fa-linkedin-in"></i></div>
+                            <div class="method-content"><h4>LinkedIn</h4><p>Connect professionally</p><span class="method-tag"><i class="fas fa-user-plus"></i> Let's network</span></div>
+                            <i class="fas fa-arrow-right method-arrow"></i>
+                        </a>
+                        <a href="https://github.com/prajapatvishnu7976-sys" target="_blank" class="contact-method-card">
+                            <div class="method-icon github"><i class="fab fa-github"></i></div>
+                            <div class="method-content"><h4>GitHub</h4><p>Check my repositories</p><span class="method-tag"><i class="fas fa-code"></i> View my code</span></div>
+                            <i class="fas fa-arrow-right method-arrow"></i>
+                        </a>
+                    </div>
+
+                    <div class="location-card">
+                        <div class="location-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div class="location-content"><h4>Based in</h4><p>Sirohi, Rajasthan, India</p><span class="location-time" id="live-time"><i class="fas fa-clock"></i> IST (UTC+5:30)</span></div>
+                    </div>
+
+                    <div class="availability-card">
+                        <div class="avail-indicator"><span class="avail-dot"></span><span class="avail-ring"></span></div>
+                        <div class="avail-content"><h4>Currently Available</h4><p>Open for internships & freelance projects</p></div>
+                    </div>
+                </div>
+
+                <div class="contact-form-side" data-aos="fade-left">
+                    <div class="contact-form-card">
+                        <div class="form-header"><h3>Send Me a Message</h3><p>Fill out the form and I'll get back to you ASAP</p></div>
+                        <form class="premium-contact-form" id="contact-form" action="https://api.web3forms.com/submit" method="POST">
                             <input type="hidden" name="access_key" value="6952bfd6-51be-4dbc-8dbb-7c9f7b9116e8">
-                            <input type="hidden" name="subject" value="New Contact from Portfolio Website">
                             <input type="hidden" name="from_name" value="Portfolio Contact Form">
-                            <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-                            
-                            <div class="form-group">
-                                <div class="input-wrapper">
-                                    <input type="text" id="name" name="name" required placeholder=" ">
-                                    <label for="name">Your Name</label>
-                                    <i class="fas fa-user input-icon"></i>
-                                </div>
-                                <div class="input-wrapper">
-                                    <input type="email" id="email" name="email" required placeholder=" ">
-                                    <label for="email">Your Email</label>
-                                    <i class="fas fa-envelope input-icon"></i>
-                                </div>
+                            <input type="checkbox" name="botcheck" class="hidden" style="display:none;">
+
+                            <div class="form-row">
+                                <div class="form-field"><label for="name"><i class="fas fa-user"></i> Your Name</label><input type="text" id="name" name="name" required placeholder="John Doe"></div>
+                                <div class="form-field"><label for="email"><i class="fas fa-envelope"></i> Your Email</label><input type="email" id="email" name="email" required placeholder="john@example.com"></div>
                             </div>
-                            
-                            <div class="input-wrapper">
-                                <input type="text" id="subject-input" name="subject" required placeholder=" ">
-                                <label for="subject-input">Subject</label>
-                                <i class="fas fa-pen input-icon"></i>
+
+                            <div class="form-field"><label for="subject-input"><i class="fas fa-tag"></i> Subject</label><input type="text" id="subject-input" name="subject" required placeholder="Internship Opportunity / Project Inquiry"></div>
+
+                            <div class="form-field">
+                                <label for="project-type"><i class="fas fa-briefcase"></i> I'm interested in</label>
+                                <select id="project-type" name="project_type">
+                                    <option value="internship">Internship Opportunity</option>
+                                    <option value="freelance">Freelance Project</option>
+                                    <option value="fulltime">Full-Time Role</option>
+                                    <option value="collab">Collaboration</option>
+                                    <option value="mentoring">DSA/Coding Mentoring</option>
+                                    <option value="other">Other</option>
+                                </select>
                             </div>
-                            
-                            <div class="input-wrapper">
-                                <textarea id="message" name="message" rows="5" required placeholder=" "></textarea>
-                                <label for="message">Your Message</label>
-                                <i class="fas fa-comment-dots input-icon"></i>
-                            </div>
-                            
-                            <button type="submit" class="btn btn-primary btn-submit">
-                                <span class="btn-text">Send Message</span>
-                                <span class="btn-loading">
-                                    <i class="fas fa-spinner fa-spin"></i> Sending...
-                                </span>
-                                <i class="fas fa-paper-plane btn-icon"></i>
+
+                            <div class="form-field"><label for="message"><i class="fas fa-comment-dots"></i> Your Message</label><textarea id="message" name="message" rows="6" required placeholder="Tell me about your opportunity or project..."></textarea></div>
+
+                            <button type="submit" class="form-submit-btn">
+                                <span class="btn-text"><i class="fas fa-paper-plane"></i> Send Message</span>
+                                <span class="btn-loading" style="display:none;"><i class="fas fa-spinner fa-spin"></i> Sending...</span>
                             </button>
+                            <p class="form-note"><i class="fas fa-shield-alt"></i> Your information is 100% secure and will never be shared.</p>
                         </form>
                     </div>
                 </div>
             </div>
-        </section>
-        
-    </main>
+        </div>
+    </section>
 
-    <!-- ============================================
-         FOOTER
-         ============================================ -->
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <a href="#home" class="footer-logo">
-                        <div class="logo-icon">
-                            <span>V</span>
+    <!-- FOOTER -->
+    <footer class="footer-premium">
+        <div class="footer-main">
+            <div class="footer-container">
+                <div class="footer-grid">
+                    <div class="footer-column brand-column">
+                        <a href="#home" class="footer-logo">
+                            <div class="footer-logo-box"><span>VK</span></div>
+                            <div class="footer-logo-text"><span class="footer-name">Vishnu Kumar</span><span class="footer-role">Software Developer</span></div>
+                        </a>
+                        <p class="footer-tagline">Building production-grade apps & web solutions with Flutter, MERN Stack, and modern technologies. Open for internships and exciting opportunities.</p>
+                        <div class="footer-social">
+                            <a href="https://github.com/prajapatvishnu7976-sys" target="_blank" class="fs-link"><i class="fab fa-github"></i></a>
+                            <a href="https://www.linkedin.com/in/vishnu-kumar-545037327/" target="_blank" class="fs-link"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="mailto:prajapatvishnu7976@gmail.com" class="fs-link"><i class="fas fa-envelope"></i></a>
+                            <a href="https://www.instagram.com/prjpt_vishnu/" target="_blank" class="fs-link"><i class="fab fa-instagram"></i></a>
+                            <a href="tel:+917976846734" class="fs-link"><i class="fas fa-phone"></i></a>
                         </div>
-                        <span class="footer-name">Vishnu Kumar</span>
-                    </a>
-                    <p class="footer-tagline">Full Stack Developer (Web + App)</p>
-                    <p class="footer-description">Building digital experiences that make a difference. Let's create something amazing together.</p>
-                </div>
-                
-                <div class="footer-links">
+                    </div>
+
                     <div class="footer-column">
-                        <h4>Quick Links</h4>
-                        <ul>
-                            <li><a href="#home">Home</a></li>
-                            <li><a href="#about">About</a></li>
-                            <li><a href="#projects">Projects</a></li>
-                            <li><a href="#contact">Contact</a></li>
+                        <h4 class="footer-heading">Quick Links</h4>
+                        <ul class="footer-links">
+                            <li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
+                            <li><a href="#about"><i class="fas fa-chevron-right"></i> About</a></li>
+                            <li><a href="#services"><i class="fas fa-chevron-right"></i> Services</a></li>
+                            <li><a href="#experience"><i class="fas fa-chevron-right"></i> Experience</a></li>
+                            <li><a href="#projects"><i class="fas fa-chevron-right"></i> Projects</a></li>
+                            <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
                         </ul>
                     </div>
+
                     <div class="footer-column">
-                        <h4>Connect</h4>
-                        <ul>
-                            <li><a href="https://github.com/prajapatvishnu7976-sys" target="_blank">GitHub</a></li>
-                            <li><a href="https://www.linkedin.com/in/vishnu-kumar-545037327/" target="_blank">LinkedIn</a></li>
-                            <li><a href="#" target="_blank">Twitter</a></li>
-                            <li><a href="mailto:prajapatvishnu7976@gmail.com">Email</a></li>
+                        <h4 class="footer-heading">Projects</h4>
+                        <ul class="footer-links">
+                            <li><a href="https://renti-go-pi.vercel.app/" target="_blank"><i class="fas fa-chevron-right"></i> RentiGo</a></li>
+                            <li><a href="https://entreskillhub.vercel.app/" target="_blank"><i class="fas fa-chevron-right"></i> EntreSkillHub</a></li>
+                            <li><a href="https://smartattendanceapp-13515.web.app/" target="_blank"><i class="fas fa-chevron-right"></i> Smart Attendance</a></li>
+                            <li><a href="https://play.google.com/store/apps/details?id=com.vishnu.codelogic" target="_blank"><i class="fas fa-chevron-right"></i> Code Logic App</a></li>
+                            <li><a href="#projects"><i class="fas fa-chevron-right"></i> View All Projects</a></li>
                         </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4 class="footer-heading">Get In Touch</h4>
+                        <ul class="footer-contact">
+                            <li><i class="fas fa-envelope"></i><a href="mailto:prajapatvishnu7976@gmail.com">prajapatvishnu7976@gmail.com</a></li>
+                            <li><i class="fas fa-phone"></i><a href="tel:+917976846734">+91 7976846734</a></li>
+                            <li><i class="fas fa-map-marker-alt"></i><span>Sirohi, Rajasthan, India</span></li>
+                            <li><i class="fas fa-clock"></i><span>Available Mon-Sun, 9 AM - 10 PM IST</span></li>
+                        </ul>
+                        <a href="Resume_vishnu.pdf" download class="footer-cta-btn"><i class="fas fa-download"></i> Download Resume</a>
                     </div>
                 </div>
             </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2025 Vishnu Kumar. All rights reserved.</p>
-                <p class="footer-made">Made with <i class="fas fa-heart"></i> and lots of <i class="fas fa-mug-hot"></i></p>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-container">
+                <div class="footer-bottom-content">
+                    <p class="copyright">© 2025 <strong>Vishnu Kumar</strong>. All rights reserved. Built with <i class="fas fa-heart" style="color:#ef4444;"></i> in India</p>
+                    <div class="footer-bottom-links"><a href="#home">Back to Top <i class="fas fa-arrow-up"></i></a></div>
+                </div>
             </div>
         </div>
     </footer>
 
-    <!-- ============================================
-         BACK TO TOP BUTTON
-         ============================================ -->
     <button class="back-to-top" id="back-to-top" aria-label="Back to top">
-        <i class="fas fa-arrow-up"></i>
+        <div class="btt-content">
+            <i class="fas fa-arrow-up"></i>
+            <span class="btt-progress"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="45" /></svg></span>
+        </div>
     </button>
 
-    <!-- ============================================
-         SCRIPTS
-         ============================================ -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="script.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true, offset: 80, easing: 'ease-out-cubic' });
+    </script>
 </body>
 </html>
